@@ -1549,7 +1549,7 @@ msgid "Supply"
 msgstr "追加"
 
 #: src/pages/AddLiquidityV2/index.tsx
-msgid "Supplying {0} {1} and{2} {3}"
+msgid "Supplying {0} {1} and {2} {3}"
 msgstr "{0} {1} と{2} {3} を提供"
 
 #: src/components/Header/index.tsx
