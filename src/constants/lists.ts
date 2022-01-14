@@ -17,7 +17,7 @@ const WRAPPED_LIST = 'wrapped.tokensoft.eth'
 const QUICK_LIST = 'https://unpkg.com/quickswap-default-token-list@1.2.11/build/quickswap-default.tokenlist.json'
 const PANCAKE_LIST = 'https://tokens.pancakeswap.finance/pancakeswap-extended.json'
 const KEYRING_LIST =
-  'https://raw.githubusercontent.com/thaobacoor/keyring-swap/mainnet/src/constants/tokenLists/keyring.tokenlist.json'
+  'https://raw.githubusercontent.com/Keyringswap/interface/mainnet/src/constants/tokenLists/keyring.tokenlist.json'
 
 export const UNSUPPORTED_LIST_URLS: string[] = [BA_LIST]
 
