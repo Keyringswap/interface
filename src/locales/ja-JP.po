@@ -169,7 +169,7 @@ msgstr "流動性を追加"
 
 #: src/pages/Pool/v2.tsx
 msgid "Add Liquidity"
-msgstr "の流動性を追加"
+msgstr "流動性を追加"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -872,12 +872,9 @@ msgid "Import List"
 msgstr "リストをインポート"
 
 #: src/pages/Pool/v2.tsx
-msgid "Import Pool"
-msgstr "プールをインポート"
-
 #: src/components/NavigationTabs/index.tsx
 msgid "Import Pool"
-msgstr "プールのインポート"
+msgstr "プールをインポート"
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "Import at your own risk"
@@ -2175,7 +2172,7 @@ msgstr "あなたのUNIのブレークダウン"
 
 #: src/pages/Pool/v2.tsx
 msgid "Your liquidity"
-msgstr "の流動性"
+msgstr "流動性"
 
 #: src/pages/Pool/index.tsx
 msgid "Your V3 liquidity positions will appear here."
