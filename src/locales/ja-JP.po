@@ -872,12 +872,9 @@ msgid "Import List"
 msgstr "リストをインポート"
 
 #: src/pages/Pool/v2.tsx
-msgid "Import Pool"
-msgstr "プールをインポート"
-
 #: src/components/NavigationTabs/index.tsx
 msgid "Import Pool"
-msgstr "プールのインポート"
+msgstr "プールをインポート"
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "Import at your own risk"
