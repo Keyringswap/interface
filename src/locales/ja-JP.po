@@ -169,7 +169,7 @@ msgstr "流動性を追加"
 
 #: src/pages/Pool/v2.tsx
 msgid "Add Liquidity"
-msgstr "の流動性を追加"
+msgstr "流動性を追加"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -2172,7 +2172,7 @@ msgstr "あなたのUNIのブレークダウン"
 
 #: src/pages/Pool/v2.tsx
 msgid "Your liquidity"
-msgstr "の流動性"
+msgstr "流動性"
 
 #: src/pages/Pool/index.tsx
 msgid "Your V3 liquidity positions will appear here."
