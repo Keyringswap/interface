@@ -152,7 +152,7 @@ export default function Pool() {
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>
+                <TYPE.white fontWeight={700}>
                   <Trans>Liquidity provider rewards</Trans>
                 </TYPE.white>
               </RowBetween>
