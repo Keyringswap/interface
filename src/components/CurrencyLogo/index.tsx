@@ -43,7 +43,7 @@ export const getTokenLogoURL = (
     SupportedChainId.POLYGON_TESTNET,
   ]
   if (networksWithUrls.includes(chainId)) {
-    return `https://raw.githubusercontent.com/thaobacoor/assets/master/blockchains/${networkName}/assets/${address}/logo.png`
+    return `https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/${networkName}/assets/${address}/logo.png`
   }
 }
 
