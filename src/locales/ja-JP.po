@@ -113,7 +113,7 @@ msgstr "<0>ヒント：</0>アクションを選択し、コミュニティへ�
 
 #: src/pages/PoolFinder/index.tsx
 msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
-msgstr "<0>ヒント:</0> このツールを使用して、画面に自動表示されないV2のプールを見つけます。"
+msgstr "<0>ヒント:</0> このツールを使用して、画面に自動表示されないプールを見つけます。"
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -156,7 +156,7 @@ msgstr "追加"
 
 #: src/components/AccountDetails/TransactionSummary.tsx
 msgid "Add <0/> and <1/> to Keyringswap"
-msgstr "<0/>と<1/>をユニスワップV2に追加"
+msgstr "<0/>と<1/>をKeyring Swapに追加"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Add Delegate +"
@@ -543,7 +543,7 @@ msgstr "プールを見つけるにはウォレットに接続してください
 
 #: src/pages/MigrateV2/index.tsx
 msgid "Connect to a wallet to view your liquidity."
-msgstr "ウォレットに接続してV2の流動性を確認します。"
+msgstr "ウォレットに接続して流動性を確認します。"
 
 #: src/pages/Pool/v2.tsx
 msgid "Connect to a wallet to view your liquidity."
@@ -666,7 +666,7 @@ msgstr "預け入れ流動性:"
 
 #: src/components/earn/StakingModal.tsx
 msgid "Deposited {0}"
-msgstr "預け入れた {0}"
+msgstr "預け入れた {0} UNI-V2"
 
 #: src/components/earn/StakingModal.tsx
 msgid "Depositing Liquidity"
@@ -702,7 +702,7 @@ msgstr "資料"
 
 #: src/pages/MigrateV2/index.tsx
 msgid "Don’t see one of your positions? <0>Import it.</0>"
-msgstr "V2の流動性が表示されない場合、該当のトークンを<0>インポート</0>してください"
+msgstr "流動性が表示されない場合、該当のトークンを<0>インポート</0>してください"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Earned UNI tokens represent voting shares in Uniswap governance."
@@ -975,7 +975,7 @@ msgstr "ライトテーマ"
 
 #: src/components/claim/ClaimModal.tsx
 #: src/pages/Pool/PositionPage.tsx
-#: src/pages/Pool/index.tsxs
+#: src/pages/Pool/index.tsx
 msgid "Liquidity"
 msgstr "流動性"
 
@@ -1128,7 +1128,7 @@ msgstr "新しいポジション"
 
 #: src/pages/MigrateV2/index.tsx
 msgid "No Liquidity found."
-msgstr "の流動性が見つかりません。"
+msgstr "流動性が見つかりません。"
 
 #: src/pages/Earn/index.tsx
 #: src/pages/Earn/index.tsx
@@ -1456,7 +1456,7 @@ msgstr "トークン選択"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Select a token to find your liquidity."
-msgstr "トークンを選択して、の流動性を見つけます。"
+msgstr "トークンを選択して、流動性を見つけます。"
 
 #: src/pages/CreateProposal/ProposalActionSelector.tsx
 msgid "Select an action"
@@ -1935,7 +1935,7 @@ msgstr "V2はレイヤー2では使用できません。イーサリアムのレ
 
 #: src/pages/Pool/index.tsx
 msgid "V2 liquidity"
-msgstr "V2の流動性"
+msgstr "流動性"
 
 #: src/components/swap/SwapRoute.tsx
 msgid "V3"
@@ -1948,11 +1948,11 @@ msgstr "V3での {0} 価格:"
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "View UNI Analytics"
-msgstr "UNI 分析サイトを表示"
+msgstr “Keyring Swap 分析サイトを表示"
 
 #: src/pages/Pool/index.tsx
 msgid "View Liquidity"
-msgstr "の流動性を表示"
+msgstr "流動性を表示"
 
 #: src/components/PositionCard/index.tsx
 msgid "View accrued fees and analytics<0>↗</0>"
@@ -2082,11 +2082,11 @@ msgstr "預け入れた流動性を引き出す"
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Withdrawing {0}"
-msgstr "{0} を引き出し中"
+msgstr "{0}LP トークンを引き出し中"
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Withdrew!"
-msgstr "を引き出しました"
+msgstr "LP トークンを引き出しました"
 
 #: src/pages/Swap/index.tsx
 msgid "Wrap"
@@ -2445,4 +2445,3 @@ msgstr "~$ <0/>"
 #: src/pages/Pool/PositionPage.tsx
 msgid "← Back to Pools Overview"
 msgstr "プール概要に戻る"
-
