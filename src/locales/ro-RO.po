@@ -1552,7 +1552,7 @@ msgid "Supply"
 msgstr "Furnizare"
 
 #: src/pages/AddLiquidityV2/index.tsx
-msgid "Supplying {0} {1} and{2} {3}"
+msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Furnizarea {0} {1} și{2} {3}"
 
 #: src/components/Header/index.tsx

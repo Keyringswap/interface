@@ -1552,7 +1552,7 @@ msgid "Supply"
 msgstr "Zásoba"
 
 #: src/pages/AddLiquidityV2/index.tsx
-msgid "Supplying {0} {1} and{2} {3}"
+msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Zásobování {0} {1} a{2} {3}"
 
 #: src/components/Header/index.tsx

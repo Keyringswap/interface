@@ -1552,7 +1552,7 @@ msgid "Supply"
 msgstr "Pasokan"
 
 #: src/pages/AddLiquidityV2/index.tsx
-msgid "Supplying {0} {1} and{2} {3}"
+msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Menyediakan {0} {1} dan{2} {3}"
 
 #: src/components/Header/index.tsx
