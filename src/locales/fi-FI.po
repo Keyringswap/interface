@@ -1552,7 +1552,7 @@ msgid "Supply"
 msgstr "Tarjonta"
 
 #: src/pages/AddLiquidityV2/index.tsx
-msgid "Supplying {0} {1} and{2} {3}"
+msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Toimitetaan {0} {1} ja{2} {3}"
 
 #: src/components/Header/index.tsx

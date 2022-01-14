@@ -1553,7 +1553,7 @@ msgid "Supply"
 msgstr "Kínálat"
 
 #: src/pages/AddLiquidityV2/index.tsx
-msgid "Supplying {0} {1} and{2} {3}"
+msgid "Supplying {0} {1} and {2} {3}"
 msgstr "{0} {1} és{2} {3}ellátása"
 
 #: src/components/Header/index.tsx
