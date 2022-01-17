@@ -1,5 +1,4 @@
 import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
-import useAutoUpdateList from 'hooks/useAutoUpdateList'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
@@ -92,7 +91,6 @@ export default function App() {
   //     // ethereum.on('networkChanged', changeChainIdRedux)
   //   }
   // }, [chainIdWeb3])
-  useAutoUpdateList()
   return (
     <ErrorBoundary>
       <Route component={GoogleAnalyticsReporter} />
