@@ -21,16 +21,26 @@ if (typeof INFURA_KEY === 'undefined') {
   throw new Error(`REACT_APP_INFURA_KEY must be a defined environment variable`)
 }
 
+export const randomInfuraKey = () => {
+  const keys = []
+  for (let index = 1; index <= 10; index++) {
+    const infuraIndex = 'REACT_APP_INFURA_KEY_' + index
+    keys.push(process.env[infuraIndex])
+  }
+  const key = keys[Math.floor(Math.random() * keys.length)]
+  return key
+}
+
 const NETWORK_URLS = {
-  [SupportedChainId.MAINNET]: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.RINKEBY]: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.ROPSTEN]: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.GOERLI]: `https://goerli.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.KOVAN]: `https://kovan.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.OPTIMISM]: `https://optimism-mainnet.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.OPTIMISTIC_KOVAN]: `https://optimism-kovan.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.ARBITRUM_ONE]: `https://arbitrum-mainnet.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.ARBITRUM_RINKEBY]: `https://arbitrum-rinkeby.infura.io/v3/${INFURA_KEY}`,
+  [SupportedChainId.MAINNET]: `https://mainnet.infura.io/v3/${randomInfuraKey()}`,
+  [SupportedChainId.RINKEBY]: `https://rinkeby.infura.io/v3/${randomInfuraKey()}`,
+  [SupportedChainId.ROPSTEN]: `https://ropsten.infura.io/v3/${randomInfuraKey()}`,
+  [SupportedChainId.GOERLI]: `https://goerli.infura.io/v3/${randomInfuraKey()}`,
+  [SupportedChainId.KOVAN]: `https://kovan.infura.io/v3/${randomInfuraKey()}`,
+  [SupportedChainId.OPTIMISM]: `https://optimism-mainnet.infura.io/v3/${randomInfuraKey()}`,
+  [SupportedChainId.OPTIMISTIC_KOVAN]: `https://optimism-kovan.infura.io/v3/${randomInfuraKey()}`,
+  [SupportedChainId.ARBITRUM_ONE]: `https://arbitrum-mainnet.infura.io/v3/${randomInfuraKey()}`,
+  [SupportedChainId.ARBITRUM_RINKEBY]: `https://arbitrum-rinkeby.infura.io/v3/${randomInfuraKey()}`,
   [SupportedChainId.POLYGON_MAINET]: `https://polygon-rpc.com/`,
   [SupportedChainId.POLYGON_TESTNET]: `https://rpc-mumbai.matic.today`,
   [SupportedChainId.BSC_MAINNET]: `https://bsc-dataseed1.ninicoin.io`,
