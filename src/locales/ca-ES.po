@@ -113,7 +113,7 @@ msgstr "<0> Consell:</0> Seleccioneu una acció i descriviu la vostra proposta p
 
 #: src/pages/PoolFinder/index.tsx
 msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
-msgstr "<0>Consell:</0> Utilitzeu aquesta eina per trobar grups de v2 que no apareixen automàticament a la interfície."
+msgstr "<0>Consell:</0> Utilitzeu aquesta eina per trobar grups que no apareixen automàticament a la interfície."
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -164,9 +164,6 @@ msgstr "Afegeix delegat +"
 
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/AddLiquidity/index.tsx
-msgid "Add Liquidity"
-msgstr "Afegiu liquiditat"
-
 #: src/pages/Pool/v2.tsx
 msgid "Add Liquidity"
 msgstr "Afegiu liquiditat"
@@ -543,7 +540,7 @@ msgstr "Connecteu-vos a una cartera per trobar piscines"
 
 #: src/pages/MigrateV2/index.tsx
 msgid "Connect to a wallet to view your liquidity."
-msgstr "Connecteu-vos a una cartera per veure la vostra liquiditat."
+msgstr "Connecteu-vos a una cartera per veure la vostra liquiditat V2."
 
 #: src/pages/Pool/v2.tsx
 msgid "Connect to a wallet to view your liquidity."
@@ -872,12 +869,9 @@ msgid "Import List"
 msgstr "Importa la llista"
 
 #: src/pages/Pool/v2.tsx
-msgid "Import Pool"
-msgstr "Importa el grup"
-
 #: src/components/NavigationTabs/index.tsx
 msgid "Import Pool"
-msgstr "Importa l'agrupació"
+msgstr "Importa el grup"
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "Import at your own risk"
@@ -1459,7 +1453,7 @@ msgstr "Seleccioneu una fitxa"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Select a token to find your liquidity."
-msgstr "Seleccioneu una fitxa per trobar la vostra liquiditat."
+msgstr "Seleccioneu un testimoni per trobar la vostra liquiditat."
 
 #: src/pages/CreateProposal/ProposalActionSelector.tsx
 msgid "Select an action"
@@ -1938,7 +1932,7 @@ msgstr "V2 no està disponible a la capa 2. Canvia a Ethereum de la capa 1."
 
 #: src/pages/Pool/index.tsx
 msgid "V2 liquidity"
-msgstr "Liquiditat V2"
+msgstr "Liquiditat"
 
 #: src/components/swap/SwapRoute.tsx
 msgid "V3"
@@ -2175,7 +2169,7 @@ msgstr "El vostre desglossament UNI"
 
 #: src/pages/Pool/v2.tsx
 msgid "Your liquidity"
-msgstr "La vostra liquiditat"
+msgstr "La teva liquiditat"
 
 #: src/pages/Pool/index.tsx
 msgid "Your V3 liquidity positions will appear here."
@@ -2448,4 +2442,3 @@ msgstr "~ $ <0/>"
 #: src/pages/Pool/PositionPage.tsx
 msgid "← Back to Pools Overview"
 msgstr "← Torna a la descripció general dels grups"
-
