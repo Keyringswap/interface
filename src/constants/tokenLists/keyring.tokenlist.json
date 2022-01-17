@@ -2,7 +2,7 @@
   "name": "KeyringSwap",
   "timestamp": "2022-01-11T20:47:02.923Z",
   "version": {
-    "major": 5,
+    "major": 6,
     "minor": 0,
     "patch": 0
   },
@@ -65,6 +65,14 @@
       "chainId": 80001,
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0xdCe0cF324155F6331bA1Bb1957b47d80d107Eb5D/logo.png"
+    },
+    {
+      "name": "Triet Token",
+      "symbol": "TT",
+      "address": "0xf96E767C183a960Bd2fe91c6ec16Efd3af7C07e0",
+      "chainId": 80001,
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0xf96E767C183a960Bd2fe91c6ec16Efd3af7C07e0/logo.png"
     }
   ]
 }
