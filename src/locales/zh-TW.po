@@ -113,7 +113,7 @@ msgstr "<0>提示：</0>選擇操作並描述您的提案。提案提交後不�
 
 #: src/pages/PoolFinder/index.tsx
 msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
-msgstr "<0>提示：</0>使用此工具可查找未自動出現在界面中的 池。"
+msgstr "<0>提示：</0>使用此工具查找不会自动出现在界面中的池。"
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -1938,7 +1938,7 @@ msgstr "V2 在 Layer 2 不可用。切換到以太坊 Layer 1。"
 
 #: src/pages/Pool/index.tsx
 msgid "V2 liquidity"
-msgstr "V2 流動資金"
+msgstr "流動資金"
 
 #: src/components/swap/SwapRoute.tsx
 msgid "V3"

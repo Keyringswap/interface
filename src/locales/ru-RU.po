@@ -113,7 +113,7 @@ msgstr "<0> Подсказка:</0> выберите действие и опи�
 
 #: src/pages/PoolFinder/index.tsx
 msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
-msgstr "<0> Подсказка:</0> Используйте этот инструмент для поиска пулов в, которые не отображаются автоматически в интерфейсе."
+msgstr "<0> Подсказка:</0> Используйте этот инструмент для поиска пулов, которые не отображаются в интерфейсе автоматически."
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
