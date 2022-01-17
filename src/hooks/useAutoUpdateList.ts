@@ -9,7 +9,6 @@ const useAutoUpdateList = () => {
   useEffect(() => {
     Object.keys(lists).map((item) => {
       if (lists[item]?.pendingUpdate) {
-        console.log('hasUpdate', item)
         dispatch(acceptListUpdate(item))
       }
     })
