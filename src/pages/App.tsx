@@ -91,6 +91,9 @@ export default function App() {
   //     // ethereum.on('networkChanged', changeChainIdRedux)
   //   }
   // }, [chainIdWeb3])
+  console.log('====================================');
+  console.log('DEPLOY 1.0.0');
+  console.log('====================================');
   return (
     <ErrorBoundary>
       <Route component={GoogleAnalyticsReporter} />
