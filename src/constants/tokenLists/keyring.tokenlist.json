@@ -1,10 +1,10 @@
 {
   "name": "KeyringSwap",
-  "timestamp": "2022-01-12T20:47:02.923Z",
+  "timestamp": "2022-01-11T20:47:02.923Z",
   "version": {
     "major": 3,
     "minor": 1,
-    "patch": 4
+    "patch": 5
   },
   "tags": {},
   "logoURI": "https://ipfs.pantograph.app/ipfs/QmdTFMfDybMfgDjKqC7NX1eAFjVTnbJtusjrG5wcsMDDLB",
@@ -57,6 +57,14 @@
       "chainId": 80001,
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0xf830c902875dff5c01ed363d0f5dc3626e0c0b4c/logo.png"
+    },
+    {
+      "name": "T-FBC Token",
+      "symbol": "T-FBC",
+      "address": "0xdce0cf324155f6331ba1bb1957b47d80d107eb5d",
+      "chainId": 80001,
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0xdce0cf324155f6331ba1bb1957b47d80d107eb5d/logo.png"
     }
   ]
 }
