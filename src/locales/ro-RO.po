@@ -113,7 +113,7 @@ msgstr "<0> Sfat:</0> Selectați o acțiune și descrieți-vă propunerea pentru
 
 #: src/pages/PoolFinder/index.tsx
 msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
-msgstr "<0> Sfat:</0> Utilizați acest instrument pentru a găsi pool-uri care nu apar automat în interfață."
+msgstr "<0> Sfat:</0> Utilizați acest instrument pentru a găsi piscine care nu apar automat în interfață."
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -1938,7 +1938,7 @@ msgstr "V2 nu este disponibil în Layer 2. Treceți la Layer 1 Ethereum."
 
 #: src/pages/Pool/index.tsx
 msgid "V2 liquidity"
-msgstr "Lichiditate V2"
+msgstr "Lichiditate"
 
 #: src/components/swap/SwapRoute.tsx
 msgid "V3"

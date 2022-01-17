@@ -91,7 +91,6 @@ export default function App() {
   //     // ethereum.on('networkChanged', changeChainIdRedux)
   //   }
   // }, [chainIdWeb3])
-
   return (
     <ErrorBoundary>
       <Route component={GoogleAnalyticsReporter} />

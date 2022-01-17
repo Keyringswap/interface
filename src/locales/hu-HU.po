@@ -113,7 +113,7 @@ msgstr "<0> Tipp:</0> Válasszon ki egy műveletet, és írja le javaslatát a k
 
 #: src/pages/PoolFinder/index.tsx
 msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
-msgstr "<0> Tipp:</0> Ezzel a poollal olyan poolokat találhat, amelyek nem jelennek meg automatikusan a felületen."
+msgstr "<0> Tipp:</0> Ezzel az eszközzel olyan készleteket kereshet, amelyek nem jelennek meg automatikusan a felületen."
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -1939,7 +1939,7 @@ msgstr "A V2 nem érhető el a 2. rétegben. Váltás az 1. réteg Ethereumra."
 
 #: src/pages/Pool/index.tsx
 msgid "V2 liquidity"
-msgstr "V2 likviditás"
+msgstr "Likviditás"
 
 #: src/components/swap/SwapRoute.tsx
 msgid "V3"

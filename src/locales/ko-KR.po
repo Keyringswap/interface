@@ -113,7 +113,7 @@ msgstr "<0> 팁 :</0> 조치를 선택하고 커뮤니티에 대한 제안을 �
 
 #: src/pages/PoolFinder/index.tsx
 msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
-msgstr "<0> 팁 :</0> 이 도구를 사용하여 인터페이스에 자동으로 표시되지 않는 풀을 찾습니다."
+msgstr "<0> 팁 :</0>인터페이스에 자동으로 나타나지 않는 풀을 찾으려면 이 도구를 사용하십시오."
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -1939,7 +1939,7 @@ msgstr "V2는 레이어 2에서 사용할 수 없습니다. 레이어 1 이더 �
 
 #: src/pages/Pool/index.tsx
 msgid "V2 liquidity"
-msgstr "V2 유동성"
+msgstr "유동성"
 
 #: src/components/swap/SwapRoute.tsx
 msgid "V3"
