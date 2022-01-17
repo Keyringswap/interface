@@ -4,7 +4,7 @@
   "version": {
     "major": 3,
     "minor": 1,
-    "patch": 6
+    "patch": 7
   },
   "tags": {},
   "logoURI": "https://ipfs.pantograph.app/ipfs/QmdTFMfDybMfgDjKqC7NX1eAFjVTnbJtusjrG5wcsMDDLB",
@@ -45,18 +45,18 @@
     {
       "name": "T-MATIC Token",
       "symbol": "T-MATIC",
-      "address": "0xf830c902875dff5c01ed363d0f5dc3626e0c0b4c",
+      "address": "0xF830C902875dff5c01eD363d0F5dC3626e0c0B4C",
       "chainId": 80001,
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0xf830c902875dff5c01ed363d0f5dc3626e0c0b4c/logo.png"
+      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0xF830C902875dff5c01eD363d0F5dC3626e0c0B4C/logo.png"
     },
     {
       "name": "T-FBC Token",
       "symbol": "T-FBC",
-      "address": "0xdce0cf324155f6331ba1bb1957b47d80d107eb5d",
+      "address": "0xdCe0cF324155F6331bA1Bb1957b47d80d107Eb5D",
       "chainId": 80001,
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0xdce0cf324155f6331ba1bb1957b47d80d107eb5d/logo.png"
+      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0xdCe0cF324155F6331bA1Bb1957b47d80d107Eb5D/logo.png"
     }
   ]
 }
