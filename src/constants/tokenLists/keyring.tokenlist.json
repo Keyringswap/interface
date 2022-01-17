@@ -4,7 +4,7 @@
   "version": {
     "major": 3,
     "minor": 1,
-    "patch": 7
+    "patch": 8
   },
   "tags": {},
   "logoURI": "https://ipfs.pantograph.app/ipfs/QmdTFMfDybMfgDjKqC7NX1eAFjVTnbJtusjrG5wcsMDDLB",
@@ -41,6 +41,14 @@
       "chainId": 80001,
       "decimals": 18,
       "logoURI": "https://tokens.pancakeswap.finance/images/0x16939ef78684453bfDFb47825F8a5F714f12623a.png"
+    },
+    {
+      "name": "Tron",
+      "symbol": "TRX",
+      "address": "0x66fbe590aa3c9761071D4595F100a80b6a721eca",
+      "chainId": 80001,
+      "decimals": 18,
+      "logoURI": "https://tokens.pancakeswap.finance/images/0x85EAC5Ac2F758618dFa09bDbe0cf174e7d574D5B.png"
     },
     {
       "name": "T-MATIC Token",
