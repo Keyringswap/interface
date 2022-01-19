@@ -73,6 +73,14 @@
       "chainId": 80001,
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0xf96E767C183a960Bd2fe91c6ec16Efd3af7C07e0/logo.png"
+    },
+      {
+      "name": "DogeCoin",
+      "symbol": "DOGE",
+      "address": "0x4E88e68a12B5d8478A9879Cae2684F1E2dE69F04",
+      "chainId": 80001,
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0x4E88e68a12B5d8478A9879Cae2684F1E2dE69F04/logo.png"
     }
   ]
 }
