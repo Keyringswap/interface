@@ -2,7 +2,7 @@
   "name": "KeyringSwap",
   "timestamp": "2022-01-10T20:47:02.923Z",
   "version": {
-    "major": 11,
+    "major": 12,
     "minor": 0,
     "patch": 0
   },
@@ -105,6 +105,22 @@
       "chainId": 80001,
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0x7fA43a3b6601e403841052b15A0b8E28E887Ae8F/logo.png"
+    },
+    {
+      "name": "Klaytn",
+      "symbol": "KLAY",
+      "address": "0xA2030Ad6e0F51a079cc5f92EB9cbBe54057e4847",
+      "chainId": 80001,
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0xA2030Ad6e0F51a079cc5f92EB9cbBe54057e4847/logo.png"
+    },
+    {
+      "name": "ECOMI",
+      "symbol": "OMI",
+      "address": "0x3865638D3BC66633Cd74f41A3FA1Da229C606bfa",
+      "chainId": 80001,
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0x3865638D3BC66633Cd74f41A3FA1Da229C606bfa/logo.png"
     }
   ]
 }
