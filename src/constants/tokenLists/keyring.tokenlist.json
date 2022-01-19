@@ -2,7 +2,7 @@
   "name": "KeyringSwap",
   "timestamp": "2022-01-10T20:47:02.923Z",
   "version": {
-    "major": 9,
+    "major": 10,
     "minor": 0,
     "patch": 0
   },
@@ -105,6 +105,14 @@
       "chainId": 80001,
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0x9d803EA9f17931C3b640801b80B28b7aF4a38C95/logo.png"
+    },
+    {
+      "name": "TRON",
+      "symbol": "TRX",
+      "address": "0x7fA43a3b6601e403841052b15A0b8E28E887Ae8F",
+      "chainId": 80001,
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0x7fA43a3b6601e403841052b15A0b8E28E887Ae8F/logo.png"
     }
   ]
 }
