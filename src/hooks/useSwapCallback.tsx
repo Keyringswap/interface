@@ -403,7 +403,7 @@ export function useSwapCallback(
             } else {
               // otherwise, the error was unexpected and we need to convey that
               console.error(`Swap failed`, error, address, calldata, value)
-
+              console.log('Swap failed: ', swapErrorToUserReadableMessage(error))
               throw new Error(t`Swap failed: ${swapErrorToUserReadableMessage(error)}`)
             }
           })
