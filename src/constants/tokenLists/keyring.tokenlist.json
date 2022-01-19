@@ -43,14 +43,6 @@
       "logoURI": "https://tokens.pancakeswap.finance/images/0x16939ef78684453bfDFb47825F8a5F714f12623a.png"
     },
     {
-      "name": "Tron",
-      "symbol": "TRX",
-      "address": "0x66fbe590aa3c9761071D4595F100a80b6a721eca",
-      "chainId": 80001,
-      "decimals": 18,
-      "logoURI": "https://tokens.pancakeswap.finance/images/0x85EAC5Ac2F758618dFa09bDbe0cf174e7d574D5B.png"
-    },
-    {
       "name": "T-MATIC Token",
       "symbol": "T-MATIC",
       "address": "0xF830C902875dff5c01eD363d0F5dC3626e0c0B4C",
