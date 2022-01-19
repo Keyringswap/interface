@@ -2,7 +2,7 @@
   "name": "KeyringSwap",
   "timestamp": "2022-01-10T20:47:02.923Z",
   "version": {
-    "major": 8,
+    "major": 9,
     "minor": 0,
     "patch": 0
   },
@@ -81,6 +81,30 @@
       "chainId": 80001,
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0x4E88e68a12B5d8478A9879Cae2684F1E2dE69F04/logo.png"
+    },
+    {
+      "name": "Cardano",
+      "symbol": "Cardano",
+      "address": "0x1F115167D32A5c2FC615CCc4705968E476d9cAFC",
+      "chainId": 80001,
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0x1F115167D32A5c2FC615CCc4705968E476d9cAFC/logo.png"
+    },
+    {
+      "name": "Litecoin",
+      "symbol": "LTC",
+      "address": "0xc3606E6Ec854415A0a87361BFe211ff8D46Ff844",
+      "chainId": 80001,
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0xc3606E6Ec854415A0a87361BFe211ff8D46Ff844/logo.png"
+    },
+    {
+      "name": "Avalanche",
+      "symbol": "Avalanche",
+      "address": "0x9d803EA9f17931C3b640801b80B28b7aF4a38C95",
+      "chainId": 80001,
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0x9d803EA9f17931C3b640801b80B28b7aF4a38C95/logo.png"
     }
   ]
 }
