@@ -242,7 +242,7 @@ export default function NetworkSelector() {
         <SelectorLabel>{info.label}</SelectorLabel>
         {showSelector && <StyledChevronDown />}
       </SelectorControls>
-      {open && (
+      {
         <FlyoutMenu>
           <FlyoutHeader>
             <Trans>Select a network</Trans>
@@ -251,7 +251,7 @@ export default function NetworkSelector() {
           <Row targetChain={SupportedChainId.POLYGON_MAINET} />
           <Row targetChain={SupportedChainId.BSC_MAINNET} />
         </FlyoutMenu>
-      )}
+      }
     </SelectorWrapper>
   )
 }

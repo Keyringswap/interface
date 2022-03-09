@@ -38,6 +38,12 @@ const ZOOM_LEVELS: Record<FeeAmount, ZoomLevels> = {
     min: 0.00001,
     max: 20,
   },
+  [FeeAmount.LOWEST]: {
+    initialMin: 0.999,
+    initialMax: 1.001,
+    min: 0.00001,
+    max: 1.5,
+  },
 }
 
 const ChartWrapper = styled.div`
