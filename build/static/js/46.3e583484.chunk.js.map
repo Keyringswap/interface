@@ -1,1 +1,1 @@
-{"version":3,"sources":["locales/de-DE.po"],"names":[],"mappings":"iIAAA,OAAe,cAA0B","file":"static/js/46.3e583484.chunk.js","sourcesContent":["export default __webpack_public_path__ + \"static/media/de-DE.5669d5bb.po\";"],"sourceRoot":""}
+{"version":3,"sources":["../../../../keyringswap/interface/src/locales/de-DE.po"],"names":[],"mappings":"iIAAA,OAAe,cAA0B","file":"static/js/46.3e583484.chunk.js","sourcesContent":["export default __webpack_public_path__ + \"static/media/de-DE.5669d5bb.po\";"],"sourceRoot":""}
