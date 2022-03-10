@@ -178,7 +178,8 @@ export default function NetworkSelector() {
   const dispatch = useAppDispatch()
   const info = chainId ? CHAIN_INFO[chainId] : undefined
 
-  const isOnL2 = chainId ? L2_CHAIN_IDS.includes(chainId) : false
+  // const isOnL2 = chainId ? L2_CHAIN_IDS.includes(chainId) : false
+  const isOnL2 = true
   const showSelector = Boolean(implements3085 || isOnL2)
 
   const mainnetInfo = CHAIN_INFO[chainId ?? getActiveChainBaseOnUrl()]
@@ -242,7 +243,7 @@ export default function NetworkSelector() {
         <SelectorLabel>{info.label}</SelectorLabel>
         {showSelector && <StyledChevronDown />}
       </SelectorControls>
-      {
+      {open && (
         <FlyoutMenu>
           <FlyoutHeader>
             <Trans>Select a network</Trans>
@@ -251,7 +252,7 @@ export default function NetworkSelector() {
           <Row targetChain={SupportedChainId.POLYGON_MAINET} />
           <Row targetChain={SupportedChainId.BSC_MAINNET} />
         </FlyoutMenu>
-      }
+      )}
     </SelectorWrapper>
   )
 }
