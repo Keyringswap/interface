@@ -236,7 +236,7 @@ export default function NetworkSelector() {
   }
 
   return (
-    <SelectorWrapper ref={node as any} onMouseEnter={toggle} onMouseLeave={toggle}>
+    <SelectorWrapper ref={node as any}>
       <SelectorControls onClick={conditionalToggle} interactive={showSelector}>
         <SelectorLogo interactive={showSelector} src={info.logoUrl || mainnetInfo.logoUrl} />
         <SelectorLabel>{info.label}</SelectorLabel>
