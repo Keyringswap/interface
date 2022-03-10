@@ -175,7 +175,6 @@ export default function NetworkSelector() {
   const toggle = useToggleModal(ApplicationModal.NETWORK_SELECTOR)
   useOnClickOutside(node, open ? toggle : undefined)
   const implements3085 = useAppSelector((state) => state.application.implements3085)
-  const dispatch = useAppDispatch()
   const info = chainId ? CHAIN_INFO[chainId] : undefined
 
   const isOnL2 = chainId ? L2_CHAIN_IDS.includes(chainId) : false
@@ -236,13 +235,13 @@ export default function NetworkSelector() {
   }
 
   return (
-    <SelectorWrapper ref={node as any}>
+    <SelectorWrapper ref={node as any} onMouseEnter={toggle} onMouseLeave={toggle}>
       <SelectorControls onClick={conditionalToggle} interactive={showSelector}>
         <SelectorLogo interactive={showSelector} src={info.logoUrl || mainnetInfo.logoUrl} />
         <SelectorLabel>{info.label}</SelectorLabel>
         {showSelector && <StyledChevronDown />}
       </SelectorControls>
-      {
+      {open && (
         <FlyoutMenu>
           <FlyoutHeader>
             <Trans>Select a network</Trans>
@@ -251,7 +250,7 @@ export default function NetworkSelector() {
           <Row targetChain={SupportedChainId.POLYGON_MAINET} />
           <Row targetChain={SupportedChainId.BSC_MAINNET} />
         </FlyoutMenu>
-      }
+      )}
     </SelectorWrapper>
   )
 }
