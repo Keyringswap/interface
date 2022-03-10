@@ -218,19 +218,19 @@ export default function NetworkSelector() {
   const history = useHistory()
   const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    if (
-      urlChainId !== -1 &&
-      chainId !== urlChainId &&
-      firstTime.current === true &&
-      account !== null &&
-      account !== undefined
-    ) {
-      firstTime.current = false
-      if (!library) return
-      switchToNetwork({ library, chainId: urlChainId })
-    }
-  }, [chainId, urlChainId, library, account])
+  // useEffect(() => {
+  //   if (
+  //     urlChainId !== -1 &&
+  //     chainId !== urlChainId &&
+  //     firstTime.current === true &&
+  //     account !== null &&
+  //     account !== undefined
+  //   ) {
+  //     firstTime.current = false
+  //     if (!library) return
+  //     switchToNetwork({ library, chainId: urlChainId })
+  //   }
+  // }, [chainId, urlChainId, library, account])
 
   const conditionalToggle = useCallback(() => {
     if (showSelector) {
