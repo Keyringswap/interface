@@ -177,7 +177,8 @@ export default function NetworkSelector() {
   const implements3085 = useAppSelector((state) => state.application.implements3085)
   const info = chainId ? CHAIN_INFO[chainId] : undefined
 
-  const isOnL2 = chainId ? L2_CHAIN_IDS.includes(chainId) : false
+  // const isOnL2 = chainId ? L2_CHAIN_IDS.includes(chainId) : false
+  const isOnL2 = true
   const showSelector = Boolean(implements3085 || isOnL2)
 
   const mainnetInfo = CHAIN_INFO[chainId ?? getActiveChainBaseOnUrl()]
