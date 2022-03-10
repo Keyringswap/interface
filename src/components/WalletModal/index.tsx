@@ -159,7 +159,6 @@ export default function WalletModal({
   const logMonitoringEvent = useWalletConnectMonitoringEventCallback()
 
   const chainInfo = chainId ? CHAIN_INFO[chainId] : undefined
-
   // close on connection, when logged out before
   useEffect(() => {
     if (account && !previousAccount && walletModalOpen) {

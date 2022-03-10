@@ -193,27 +193,44 @@ const getChainNameFromId = (id: string | number) => {
 }
 
 export default function NetworkSelector() {
-  const { library } = useActiveWeb3React()
+  const { library, account } = useActiveWeb3React()
 
   const [chainId] = useDefaultChainId()
   const prevChainId = usePrevious(chainId)
   const parsedQs = useParsedQueryString()
   const { urlChain, urlChainId } = getParsedChainId(parsedQs)
+  const firstTime = useRef(true)
   const node = useRef<HTMLDivElement>()
   const open = useModalOpen(ApplicationModal.NETWORK_SELECTOR)
   const toggle = useToggleModal(ApplicationModal.NETWORK_SELECTOR)
   useOnClickOutside(node, open ? toggle : undefined)
   const implements3085 = useAppSelector((state) => state.application.implements3085)
-  const info = chainId ? CHAIN_INFO[chainId] : undefined
-
+  const info = chainId ? CHAIN_INFO[chainId] : urlChainId ? CHAIN_INFO[urlChainId] : undefined
+  // console.log('urlChainId', urlChainId)
+  // console.log('info', info)
+  // console.log('chainId', chainId)
   // const isOnL2 = chainId ? L2_CHAIN_IDS.includes(chainId) : false
   const isOnL2 = true
   const showSelector = Boolean(implements3085 || isOnL2)
-
-  const mainnetInfo = CHAIN_INFO[chainId ?? getActiveChainBaseOnUrl()]
+  // Only switch chain when active account
+  // const mainnetInfo = CHAIN_INFO[chainId ?? getActiveChainBaseOnUrl()]
 
   const history = useHistory()
   const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    if (
+      urlChainId !== -1 &&
+      chainId !== urlChainId &&
+      firstTime.current === true &&
+      account !== null &&
+      account !== undefined
+    ) {
+      firstTime.current = false
+      if (!library) return
+      switchToNetwork({ library, chainId: urlChainId })
+    }
+  }, [chainId, urlChainId, library, account])
 
   const conditionalToggle = useCallback(() => {
     if (showSelector) {
@@ -223,7 +240,7 @@ export default function NetworkSelector() {
 
   const handleChainSwitch = useCallback(
     (targetChain: number, skipToggle?: boolean) => {
-      if (!library) return
+      if (!library || account === null || account === undefined) return
       switchToNetwork({ library, chainId: targetChain })
         .then(() => {
           if (!skipToggle) {
@@ -249,7 +266,7 @@ export default function NetworkSelector() {
           dispatch(addPopup({ content: { failedSwitchNetwork: targetChain }, key: `failed-network-switch` }))
         })
     },
-    [dispatch, library, toggle, history, chainId]
+    [dispatch, library, toggle, history, chainId, account]
   )
 
   function Row({ targetChain, onSelectChain }: { targetChain: number; onSelectChain: (targetChain: number) => void }) {
@@ -315,8 +332,7 @@ export default function NetworkSelector() {
   }
 
   useEffect(() => {
-    if (!chainId || !prevChainId) return
-
+    if (!chainId || !prevChainId || account === null || account === undefined) return
     // when network change originates from wallet or dropdown selector, just update URL
     if (chainId !== prevChainId) {
       history.replace({ search: replaceURLParam(history.location.search, 'chain', getChainNameFromId(chainId)) })
@@ -324,7 +340,7 @@ export default function NetworkSelector() {
     } else if (urlChainId && urlChainId !== chainId) {
       handleChainSwitch(urlChainId, true)
     }
-  }, [chainId, urlChainId, prevChainId, handleChainSwitch, history])
+  }, [chainId, urlChainId, prevChainId, handleChainSwitch, history, account])
 
   // set chain parameter on initial load if not there
   useEffect(() => {
@@ -335,11 +351,10 @@ export default function NetworkSelector() {
   if (!chainId || !info || !library) {
     return null
   }
-
   return (
     <SelectorWrapper ref={node as any}>
       <SelectorControls onClick={conditionalToggle} interactive={showSelector}>
-        <SelectorLogo interactive={showSelector} src={info.logoUrl || mainnetInfo.logoUrl} />
+        <SelectorLogo interactive={showSelector} src={info.logoUrl} />
         <SelectorLabel>{info.label}</SelectorLabel>
         {showSelector && <StyledChevronDown />}
       </SelectorControls>
@@ -355,7 +370,7 @@ export default function NetworkSelector() {
           </FlyoutHeader>
           <Row onSelectChain={handleChainSwitch} targetChain={SupportedChainId.MAINNET} />
           <Row onSelectChain={handleChainSwitch} targetChain={SupportedChainId.POLYGON_MAINET} />
-          {/* <Row onSelectChain={handleChainSwitch} targetChain={SupportedChainId.BSC_MAINNET} /> */}
+          <Row onSelectChain={handleChainSwitch} targetChain={SupportedChainId.BSC_MAINNET} />
         </FlyoutMenu>
       )}
     </SelectorWrapper>
