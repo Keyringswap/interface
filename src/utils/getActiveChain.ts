@@ -16,17 +16,8 @@ import { SupportedChainId } from '../constants/chains'
 // }
 
 export function getActiveChainBaseOnUrl(): number {
-  // if (window.location.href === 'http://localhost:3000/#/swap') {
-  //   console.log('first time')
-  // } else {
-  //   console.log('window.location.href', window.location.href)
-  // }
-  // const urlSearchParams = new URLSearchParams(window.location.href)
-  // const params = Object.fromEntries(urlSearchParams.entries())
-  // console.log('params', params, params[0])
-  // console.log('window.location.host', window.location.host)
-
-  // const subdomain = window.location.host.split('.')[1] ? window.location.host.split('.')[0] : false
+  // ex : http://localhost:3000/#/swap?chain=polygon
+  //  http://localhost:3000/#/swap?chain=binance
   const subdomain = window.location.href.split('swap?chain=').pop()
   switch (subdomain) {
     case 'mainnet':
