@@ -202,3 +202,18 @@ export const CHAIN_INFO: ChainInfo = {
 export const ARBITRUM_HELP_CENTER_LINK = 'https://help.uniswap.org/en/collections/3137787-uniswap-on-arbitrum'
 export const OPTIMISM_HELP_CENTER_LINK =
   'https://help.uniswap.org/en/collections/3137778-uniswap-on-optimistic-ethereum-oξ'
+
+export const CHAIN_IDS_TO_NAMES = {
+  [SupportedChainId.MAINNET]: 'mainnet',
+  [SupportedChainId.ROPSTEN]: 'ropsten',
+  [SupportedChainId.RINKEBY]: 'rinkeby',
+  [SupportedChainId.GOERLI]: 'goerli',
+  [SupportedChainId.KOVAN]: 'kovan',
+  [SupportedChainId.POLYGON_MAINET]: 'polygon',
+  [SupportedChainId.POLYGON_TESTNET]: 'polygon_mumbai',
+  [SupportedChainId.ARBITRUM_ONE]: 'arbitrum',
+  [SupportedChainId.ARBITRUM_RINKEBY]: 'arbitrum_rinkeby',
+  [SupportedChainId.OPTIMISM]: 'optimism',
+  [SupportedChainId.OPTIMISTIC_KOVAN]: 'optimistic_kovan',
+  [SupportedChainId.BSC_MAINNET]: 'binance',
+}
