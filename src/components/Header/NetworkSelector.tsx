@@ -240,7 +240,7 @@ export default function NetworkSelector() {
 
   const handleChainSwitch = useCallback(
     (targetChain: number, skipToggle?: boolean) => {
-      if (!library || account === null || account === undefined) return
+      if (!library) return
       switchToNetwork({ library, chainId: targetChain })
         .then(() => {
           if (!skipToggle) {
@@ -249,6 +249,9 @@ export default function NetworkSelector() {
           history.replace({
             search: replaceURLParam(history.location.search, 'chain', getChainNameFromId(targetChain)),
           })
+          if (account === null || account === undefined) {
+            window.location.reload()
+          }
         })
         .catch((error) => {
           console.error('Failed to switch networks', error)
@@ -332,7 +335,7 @@ export default function NetworkSelector() {
   }
 
   useEffect(() => {
-    if (!chainId || !prevChainId || account === null || account === undefined) return
+    if (!chainId || !prevChainId) return
     // when network change originates from wallet or dropdown selector, just update URL
     if (chainId !== prevChainId) {
       history.replace({ search: replaceURLParam(history.location.search, 'chain', getChainNameFromId(chainId)) })
