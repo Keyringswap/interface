@@ -27,6 +27,7 @@ export function getActiveChainBaseOnUrl(): number {
     case 'rinkeby':
       return SupportedChainId.RINKEBY
     case 'binance':
+    case 'bsc':
       return SupportedChainId.BSC_MAINNET
     case 'polygon':
       return SupportedChainId.POLYGON_MAINET
