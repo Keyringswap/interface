@@ -7,7 +7,7 @@ import { GetQuoteResult } from './types'
 export const routingApi = createApi({
   reducerPath: 'routingApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://api.uniswap.org/v1/',
+    baseUrl: 'https://d4e7-115-79-195-10.ngrok.io/',
   }),
   endpoints: (build) => ({
     getQuote: build.query<
