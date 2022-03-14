@@ -18,7 +18,11 @@ import { SupportedChainId } from '../constants/chains'
 export function getActiveChainBaseOnUrl(): number {
   // ex : http://localhost:3000/#/swap?chain=polygon
   //  http://localhost:3000/#/swap?chain=binance
-  const subdomain = window.location.href.split('swap?chain=').pop()
+  // https://swap.keyring.app/#/swap?chain=polygon&outputCurrency=0xc2132d05d31c914a87c6611c10748aeb04b58e8f
+  let subdomain = window.location.href.split('swap?chain=').pop() || ''
+  if (subdomain.includes('&outputCurrency')) {
+    subdomain = subdomain.split('&')[0]
+  }
   switch (subdomain) {
     case 'mainnet':
       return SupportedChainId.MAINNET
