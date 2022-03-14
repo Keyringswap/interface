@@ -6,7 +6,7 @@ import {
   computePairAddress,
   FACTORY_ADDRESS as V2_FACTORY_ADDRESS,
   INIT_CODE_HASH as BACOOR_INIT_CONDE_HASH,
-} from '@duythao_bacoor/v2-sdk'
+} from '@keyringswap/v2-sdk'
 import {
   ChainId,
   FACTORY_ADDRESS as SUSHI_FACTORY_ADDRESS,
@@ -77,6 +77,12 @@ export const BI_SWAP = 'BiSwap'
 export const PANCAKE_SWAP = 'PancakeSwap'
 export const APE_SWAP = 'ApeSwap'
 export const BABY_SWAP = 'BabySwap'
+
+export const TRADER_JOE = 'TraderJoe'
+export const PANGOLIN = 'Pangolin'
+export const THORUS = 'Thorus'
+export const ELK_FINANCE = 'Elk'
+
 // Polygon testnet
 
 export const BACOOR_ROUTER = '0x20E017D2605228CD369438e60C52aE038eC608d8'

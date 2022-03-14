@@ -1,5 +1,5 @@
-import { Pair } from '@duythao_bacoor/v2-sdk'
 import { TransactionResponse } from '@ethersproject/providers'
+import { Pair } from '@keyringswap/v2-sdk'
 import { Trans } from '@lingui/macro'
 import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { useCallback, useState } from 'react'

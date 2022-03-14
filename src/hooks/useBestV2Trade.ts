@@ -1,4 +1,4 @@
-import { Pair, Trade } from '@duythao_bacoor/v2-sdk'
+import { Pair, Trade } from '@keyringswap/v2-sdk'
 import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
 import { useMemo } from 'react'
 import { isTradeBetter } from 'utils/isTradeBetter'

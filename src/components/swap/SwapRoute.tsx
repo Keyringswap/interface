@@ -1,4 +1,4 @@
-import { Trade as V2Trade } from '@duythao_bacoor/v2-sdk'
+import { Trade as V2Trade } from '@keyringswap/v2-sdk'
 import { Trans } from '@lingui/macro'
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { FeeAmount, Trade as V3Trade } from '@uniswap/v3-sdk'

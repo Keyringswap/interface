@@ -1,4 +1,4 @@
-import { NATIVE } from '@duythao_bacoor/v2-sdk'
+import { NATIVE } from '@keyringswap/v2-sdk'
 // eslint-disable-next-line no-restricted-imports
 import { t, Trans } from '@lingui/macro'
 import { Currency, Token } from '@uniswap/sdk-core'
