@@ -7,7 +7,7 @@ import { GetQuoteResult } from './types'
 export const routingApi = createApi({
   reducerPath: 'routingApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://d4e7-115-79-195-10.ngrok.io/',
+    baseUrl: 'https://0317-115-79-195-10.ngrok.io/',
   }),
   endpoints: (build) => ({
     getQuote: build.query<
