@@ -19,6 +19,8 @@ const PANCAKE_LIST = 'https://tokens.pancakeswap.finance/pancakeswap-extended.js
 const KEYRING_LIST =
   'https://raw.githubusercontent.com/Keyringswap/interface/mainnet/src/constants/tokenLists/keyring.tokenlist.json'
 
+const TRADERJOE_LIST = 'https://raw.githubusercontent.com/traderjoe-xyz/joe-tokenlists/main/joe.tokenlist.json'
+
 export const UNSUPPORTED_LIST_URLS: string[] = [BA_LIST]
 
 // this is the default list of lists that are exposed to users
@@ -27,6 +29,7 @@ const DEFAULT_LIST_OF_LISTS_TO_DISPLAY: string[] = [
   KEYRING_LIST,
   QUICK_LIST,
   PANCAKE_LIST,
+  TRADERJOE_LIST,
   COMPOUND_LIST,
   AAVE_LIST,
   CMC_ALL_LIST,
@@ -49,5 +52,5 @@ export const DEFAULT_LIST_OF_LISTS: string[] = [
 // default lists to be 'active' aka searched across
 export const DEFAULT_ACTIVE_LIST_URLS: string[] =
   getActiveChainBaseOnUrl() !== SupportedChainId.POLYGON_TESTNET
-    ? [GEMINI_LIST, QUICK_LIST, PANCAKE_LIST]
+    ? [GEMINI_LIST, QUICK_LIST, PANCAKE_LIST, TRADERJOE_LIST]
     : [KEYRING_LIST]
