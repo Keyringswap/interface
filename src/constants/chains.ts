@@ -62,6 +62,7 @@ export const L1_CHAIN_IDS = [
   SupportedChainId.POLYGON_TESTNET,
   SupportedChainId.AVALANCHE,
   SupportedChainId.AVALANCHE_TESTNET,
+  SupportedChainId.ARBITRUM_ONE,
 ] as const
 
 export type SupportedL1ChainId = typeof L1_CHAIN_IDS[number]
