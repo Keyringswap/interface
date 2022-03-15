@@ -46,6 +46,10 @@ export function getActiveChainBaseOnUrl(): number {
       return SupportedChainId.AVALANCHE
     case 'fuji':
       return SupportedChainId.AVALANCHE_TESTNET
+    case 'arbitrum':
+      return SupportedChainId.ARBITRUM_ONE
+    case 'arbitrum-test':
+      return SupportedChainId.ARBITRUM_RINKEBY
     default:
       return SupportedChainId.MAINNET
   }
