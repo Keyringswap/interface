@@ -98,6 +98,7 @@ function useSwapCallArguments(
       return swapMethods.map(({ methodName, args, value }) => {
         const newMethodName =
           name === TRADER_JOE || name === PANGOLIN ? methodName.replaceAll('ETH', 'AVAX') : methodName
+
         if (argentWalletContract && trade.inputAmount.currency.isToken) {
           return {
             address: argentWalletContract.address,

@@ -20,12 +20,14 @@ import babyswapLogoUrl from 'assets/images/babyswap.png'
 import biswapLogoUrl from 'assets/images/biswap.png'
 import kyberswapLogoUrl from 'assets/images/KNC.svg'
 import pancakeswapLogoUrl from 'assets/images/pancake.png'
+import pangolinLogoUrl from 'assets/images/pangolin.png'
 import polycatLogoUrl from 'assets/images/polycat.png'
 import polydexLogoUrl from 'assets/images/polydex.png'
 import quickswapLogoUrl from 'assets/images/quickswap.png'
 import shibaswapLogoUrl from 'assets/images/shiba.png'
 import sushiswapLogoUrl from 'assets/images/sushi.svg'
 import uniswapLogoUrl from 'assets/images/token-logo.png'
+import traderjoeLogoUrl from 'assets/images/traderjoe.png'
 
 import { constructSameAddressMap } from '../utils/constructSameAddressMap'
 import { SupportedChainId } from './chains'
@@ -294,6 +296,8 @@ export const LOGO: { [key: string]: string } = {
   [PANCAKE_SWAP]: pancakeswapLogoUrl,
   [APE_SWAP]: apeswapLogoUrl,
   [BABY_SWAP]: babyswapLogoUrl,
+  [TRADER_JOE]: traderjoeLogoUrl,
+  [PANGOLIN]: pangolinLogoUrl,
 }
 
 export const CHAIN_SWAP_MAP: ChainSwapMap = {
