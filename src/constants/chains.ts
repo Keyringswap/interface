@@ -1,3 +1,4 @@
+import avalancheLogoUrl from 'assets/images/avalanche.svg'
 import binanceLogoUrl from 'assets/images/binance.svg'
 import ethereumLogoUrl from 'assets/images/ethereum-logo.png'
 import polygonLogoUrl from 'assets/images/polygon.svg'
@@ -18,6 +19,10 @@ export enum SupportedChainId {
   OPTIMISTIC_KOVAN = 69,
 
   BSC_MAINNET = 56,
+  BSC_TESTNET = 97,
+
+  AVALANCHE = 43114,
+  AVALANCHE_TESTNET = 43113,
 
   POLYGON_MAINET = 137,
   POLYGON_TESTNET = 80001,
@@ -36,9 +41,13 @@ export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
   SupportedChainId.OPTIMISTIC_KOVAN,
 
   SupportedChainId.BSC_MAINNET,
+  SupportedChainId.BSC_TESTNET,
 
   SupportedChainId.POLYGON_MAINET,
   SupportedChainId.POLYGON_TESTNET,
+
+  SupportedChainId.AVALANCHE,
+  SupportedChainId.AVALANCHE_TESTNET,
 ]
 
 export const L1_CHAIN_IDS = [
@@ -48,8 +57,11 @@ export const L1_CHAIN_IDS = [
   SupportedChainId.GOERLI,
   SupportedChainId.KOVAN,
   SupportedChainId.BSC_MAINNET,
+  SupportedChainId.BSC_TESTNET,
   SupportedChainId.POLYGON_MAINET,
   SupportedChainId.POLYGON_TESTNET,
+  SupportedChainId.AVALANCHE,
+  SupportedChainId.AVALANCHE_TESTNET,
 ] as const
 
 export type SupportedL1ChainId = typeof L1_CHAIN_IDS[number]
@@ -179,6 +191,15 @@ export const CHAIN_INFO: ChainInfo = {
     nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
     rpcUrls: ['https://bsc-dataseed1.ninicoin.io'],
   },
+  [SupportedChainId.BSC_TESTNET]: {
+    docs: 'https://docs.uniswap.org/',
+    explorer: 'https://testnet.bscscan.com/',
+    infoLink: 'https://info-swap.web.app',
+    label: 'BSC',
+    logoUrl: binanceLogoUrl,
+    nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
+    rpcUrls: ['https://data-seed-prebsc-2-s1.binance.org:8545'],
+  },
   [SupportedChainId.POLYGON_MAINET]: {
     docs: 'https://docs.uniswap.org/',
     explorer: 'https://polygonscan.com/',
@@ -196,6 +217,24 @@ export const CHAIN_INFO: ChainInfo = {
     logoUrl: polygonLogoUrl,
     nativeCurrency: { name: 'MATIC', symbol: 'MATIC', decimals: 18 },
     rpcUrls: ['https://rpc-mumbai.maticvigil.com'],
+  },
+  [SupportedChainId.AVALANCHE]: {
+    docs: 'https://docs.uniswap.org/',
+    explorer: 'https://polygonscan.com/',
+    infoLink: 'https://info-swap.web.app',
+    label: 'Avalanche',
+    logoUrl: avalancheLogoUrl,
+    nativeCurrency: { name: 'Avalanche', symbol: 'AVAX', decimals: 18 },
+    rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
+  },
+  [SupportedChainId.AVALANCHE_TESTNET]: {
+    docs: 'https://docs.uniswap.org/',
+    explorer: 'https://mumbai.polygonscan.com/',
+    infoLink: 'https://info-swap.web.app',
+    label: 'Avalanche',
+    logoUrl: avalancheLogoUrl,
+    nativeCurrency: { name: 'Avalanche', symbol: 'AVAX', decimals: 18 },
+    rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
   },
 }
 
@@ -216,4 +255,7 @@ export const CHAIN_IDS_TO_NAMES = {
   [SupportedChainId.OPTIMISM]: 'optimism',
   [SupportedChainId.OPTIMISTIC_KOVAN]: 'optimistic_kovan',
   [SupportedChainId.BSC_MAINNET]: 'bsc',
+  [SupportedChainId.BSC_TESTNET]: 'bsc_test',
+  [SupportedChainId.AVALANCHE]: 'avax',
+  [SupportedChainId.AVALANCHE_TESTNET]: 'fuji',
 }

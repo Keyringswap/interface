@@ -1,4 +1,4 @@
-import { computePairAddress, INIT_CODE_HASH, Pair } from '@duythao_bacoor/v2-sdk'
+import { computePairAddress, INIT_CODE_HASH, Pair } from '@keyringswap/v2-sdk'
 import { Percent, Token } from '@uniswap/sdk-core'
 import { L2_CHAIN_IDS, SupportedChainId } from 'constants/chains'
 import { SupportedLocale } from 'constants/locales'

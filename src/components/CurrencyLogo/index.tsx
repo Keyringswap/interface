@@ -1,4 +1,5 @@
 import { Currency } from '@uniswap/sdk-core'
+import AVAXLogo from 'assets/images/avalanche.svg'
 import BNBLogo from 'assets/images/binance.svg'
 import EthereumLogo from 'assets/images/ethereum-logo.png'
 import PolygonLogo from 'assets/images/polygon.svg'
@@ -59,6 +60,9 @@ const LOGO: { readonly [chainId in SupportedChainId]?: string } = {
   [SupportedChainId.POLYGON_MAINET]: PolygonLogo,
   [SupportedChainId.POLYGON_TESTNET]: PolygonLogo,
   [SupportedChainId.BSC_MAINNET]: BNBLogo,
+  [SupportedChainId.BSC_TESTNET]: BNBLogo,
+  [SupportedChainId.AVALANCHE]: AVAXLogo,
+  [SupportedChainId.AVALANCHE_TESTNET]: AVAXLogo,
 }
 
 const unknown = 'https://raw.githubusercontent.com/sushiswap/icons/master/token/unknown.png'
@@ -74,7 +78,7 @@ export default function CurrencyLogo({
   style?: React.CSSProperties
 }) {
   const uriLocations = useHttpLocations(currency instanceof WrappedTokenInfo ? currency.logoURI : undefined)
-
+  console.log('abc', currency === null || currency === undefined)
   const srcs: string[] = useMemo(() => {
     if (currency === null || currency === undefined) return [unknown]
 
@@ -82,7 +86,7 @@ export default function CurrencyLogo({
       return [LOGO[currency.chainId], unknown]
     }
 
-    if (currency.isToken) {
+    if (currency?.isToken) {
       const defaultUrls = []
       const url = getTokenLogoURL(currency.address, currency.chainId)
       if (url) {

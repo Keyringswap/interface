@@ -42,6 +42,10 @@ export function getActiveChainBaseOnUrl(): number {
       return SupportedChainId.GOERLI
     case 'kovan':
       return SupportedChainId.KOVAN
+    case 'avax':
+      return SupportedChainId.AVALANCHE
+    case 'fuji':
+      return SupportedChainId.AVALANCHE_TESTNET
     default:
       return SupportedChainId.MAINNET
   }

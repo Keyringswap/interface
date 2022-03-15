@@ -6,7 +6,7 @@ import {
   computePairAddress,
   FACTORY_ADDRESS as V2_FACTORY_ADDRESS,
   INIT_CODE_HASH as BACOOR_INIT_CONDE_HASH,
-} from '@duythao_bacoor/v2-sdk'
+} from '@keyringswap/v2-sdk'
 import {
   ChainId,
   FACTORY_ADDRESS as SUSHI_FACTORY_ADDRESS,
@@ -61,6 +61,8 @@ export const MULTICALL_ADDRESS: AddressMap = {
   [SupportedChainId.POLYGON_MAINET]: '0x895CA06c053Ec87C17124c566DD511E6eC4eCcb6',
   [SupportedChainId.POLYGON_TESTNET]: '0x7aFd4508B74302E15f182032038EE7c827Cf7aDd',
   [SupportedChainId.BSC_MAINNET]: '0xAACf563D469027583392A03Fa92171047dEBC719',
+  [SupportedChainId.AVALANCHE]: '0x0FB54156B496b5a040b51A71817aED9e2927912E',
+  [SupportedChainId.AVALANCHE_TESTNET]: '0xfc498b7548175304e72c80e67324c8a306239abb',
 }
 
 export const BACOOR_SWAP = 'BacoorSwap'
@@ -77,6 +79,12 @@ export const BI_SWAP = 'BiSwap'
 export const PANCAKE_SWAP = 'PancakeSwap'
 export const APE_SWAP = 'ApeSwap'
 export const BABY_SWAP = 'BabySwap'
+
+export const TRADER_JOE = 'TraderJoe'
+export const PANGOLIN = 'Pangolin'
+export const THORUS = 'Thorus'
+export const ELK_FINANCE = 'Elk'
+
 // Polygon testnet
 
 export const BACOOR_ROUTER = '0x20E017D2605228CD369438e60C52aE038eC608d8'
@@ -235,11 +243,43 @@ export const BABYSWAP_FACTORY_ADDRESS_BSC: AddressMap = constructSameAddressMap(
 
 export const BABYSWAP_INIT_CODE_HASH_BSC = '0x48c8bec5512d397a5d512fbb7d83d515e7b6d91e9838730bd1aa1b16575da7f5'
 
+export const SUSHI_ROUTER_ADDRESS_AVAX: AddressMap = constructSameAddressMap(
+  '0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506'
+)
+
+export const SUSHI_FACTORY_ADDRESS_AVAX: AddressMap = constructSameAddressMap(
+  '0xc35dadb65012ec5796536bd9864ed8773abc74c4'
+)
+
+export const SUSHI_INIT_CODE_HASH_AVAX = '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303'
+
+export const TRADERJOE_ROUTER_ADDRESS_AVAX: AddressMap = constructSameAddressMap(
+  '0x60aE616a2155Ee3d9A68541Ba4544862310933d4'
+)
+
+export const TRADERJOE_FACTORY_ADDRESS_AVAX: AddressMap = constructSameAddressMap(
+  '0x9Ad6C38BE94206cA50bb0d90783181662f0Cfa10'
+)
+
+export const TRADERJOE_INIT_CODE_HASH_AVAX = '0x0bbca9af0511ad1a1da383135cf3a8d2ac620e549ef9f6ae3a4c33c2fed0af91'
+
+export const PANGOLIN_ROUTER_ADDRESS_AVAX: AddressMap = constructSameAddressMap(
+  '0xE54Ca86531e17Ef3616d22Ca28b0D458b6C89106'
+)
+
+export const PANGOLIN_FACTORY_ADDRESS_AVAX: AddressMap = constructSameAddressMap(
+  '0xefa94DE7a4656D787667C749f7E1223D71E9FD88'
+)
+
+export const PANGOLIN_INIT_CODE_HASH_AVAX = '0x40231f6b438bce0797c9ada29b718a87ea0a5cea3fe9a771abdd76bd41a3e545'
+
 export const CHAIN_SWAP_NAMES: ChainSwapName = {
   [SupportedChainId.MAINNET]: [SUSHI_SWAP, UNI_SWAP, SHIBA_SWAP, KYBER_SWAP],
   [SupportedChainId.POLYGON_MAINET]: [SUSHI_SWAP, QUICK_SWAP, APE_SWAP, POLYCAT, POLYDEX],
   [SupportedChainId.BSC_MAINNET]: [SUSHI_SWAP, PANCAKE_SWAP, BI_SWAP, APE_SWAP, BABY_SWAP],
   [SupportedChainId.POLYGON_TESTNET]: [SUSHI_SWAP, BACOOR_SWAP, UNI_SWAP],
+  [SupportedChainId.AVALANCHE]: [SUSHI_SWAP, TRADER_JOE, PANGOLIN],
+  [SupportedChainId.AVALANCHE_TESTNET]: [SUSHI_SWAP],
 }
 
 export const LOGO: { [key: string]: string } = {
@@ -364,6 +404,34 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       factoryAddresses: BABYSWAP_FACTORY_ADDRESS_BSC,
       initCodeHash: BABYSWAP_INIT_CODE_HASH_BSC,
       routerAddress: BABYSWAP_ROUTER_ADDRESS_BSC,
+      computePairAddress,
+    },
+  },
+  [SupportedChainId.AVALANCHE]: {
+    [SUSHI_SWAP]: {
+      factoryAddresses: SUSHI_FACTORY_ADDRESS_AVAX,
+      initCodeHash: SUSHI_INIT_CODE_HASH_AVAX,
+      routerAddress: SUSHI_ROUTER_ADDRESS_AVAX,
+      computePairAddress,
+    },
+    [TRADER_JOE]: {
+      factoryAddresses: TRADERJOE_FACTORY_ADDRESS_AVAX,
+      initCodeHash: TRADERJOE_INIT_CODE_HASH_AVAX,
+      routerAddress: TRADERJOE_ROUTER_ADDRESS_AVAX,
+      computePairAddress,
+    },
+    [PANGOLIN]: {
+      factoryAddresses: PANGOLIN_FACTORY_ADDRESS_AVAX,
+      initCodeHash: PANGOLIN_INIT_CODE_HASH_AVAX,
+      routerAddress: PANGOLIN_ROUTER_ADDRESS_AVAX,
+      computePairAddress,
+    },
+  },
+  [SupportedChainId.AVALANCHE_TESTNET]: {
+    [SUSHI_SWAP]: {
+      factoryAddresses: SUSHI_FACTORY_ADDRESS_AVAX,
+      initCodeHash: SUSHI_INIT_CODE_HASH_AVAX,
+      routerAddress: SUSHI_ROUTER_ADDRESS_AVAX,
       computePairAddress,
     },
   },

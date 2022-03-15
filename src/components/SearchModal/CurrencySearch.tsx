@@ -1,4 +1,4 @@
-import { NATIVE } from '@duythao_bacoor/v2-sdk'
+import { NATIVE } from '@keyringswap/v2-sdk'
 // eslint-disable-next-line no-restricted-imports
 import { t, Trans } from '@lingui/macro'
 import { Currency, Token } from '@uniswap/sdk-core'
@@ -89,7 +89,7 @@ export function CurrencySearch({
   const isAddressSearch = isAddress(debouncedQuery)
 
   const searchToken = useToken(debouncedQuery)
-
+  console.log('searchToken', searchToken)
   const searchTokenIsAdded = useIsUserAddedToken(searchToken)
 
   useEffect(() => {

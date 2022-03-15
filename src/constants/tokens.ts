@@ -202,6 +202,27 @@ export const WETH9_EXTENDED: { [chainId: number]: Token } = {
     'WBNB',
     'Wrapped BNB'
   ),
+  [SupportedChainId.BSC_TESTNET]: new Token(
+    SupportedChainId.BSC_TESTNET,
+    '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
+    18,
+    'WBNB',
+    'Wrapped BNB'
+  ),
+  [SupportedChainId.AVALANCHE]: new Token(
+    SupportedChainId.AVALANCHE,
+    '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
+    18,
+    'WAVAX',
+    'Wrapped AVAX'
+  ),
+  [SupportedChainId.AVALANCHE_TESTNET]: new Token(
+    SupportedChainId.AVALANCHE_TESTNET,
+    '0xd00ae08403B9bbb9124bB305C09058E32C39A48c',
+    18,
+    'WAVAX',
+    'Wrapped AVAX'
+  ),
 }
 
 export class ExtendedEther extends Ether {

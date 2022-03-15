@@ -1,4 +1,4 @@
-import { Pair, Route, Trade } from '@duythao_bacoor/v2-sdk'
+import { Pair, Route, Trade } from '@keyringswap/v2-sdk'
 import { CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
 

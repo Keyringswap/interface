@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Trade as V2Trade } from '@duythao_bacoor/v2-sdk'
+import { Trade as V2Trade } from '@keyringswap/v2-sdk'
 import { Trans } from '@lingui/macro'
 import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sdk-core'
 import { Trade as V3Trade } from '@uniswap/v3-sdk'
@@ -521,7 +521,7 @@ export default function Swap({ history }: RouteComponentProps) {
     recipient,
     signatureData
   )
-
+  
   const handleSwap = useCallback(() => {
     if (!swapCallback) {
       return

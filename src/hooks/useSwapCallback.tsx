@@ -1,12 +1,12 @@
-import { Router, Trade as V2Trade } from '@duythao_bacoor/v2-sdk'
 import { BigNumber } from '@ethersproject/bignumber'
+import { Router, Trade as V2Trade } from '@keyringswap/v2-sdk'
 // eslint-disable-next-line no-restricted-imports
 import { t, Trans } from '@lingui/macro'
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { SwapRouter, Trade as V3Trade } from '@uniswap/v3-sdk'
 import { ReactNode, useMemo } from 'react'
 
-import { BACOOR_SWAP, SWAP_ROUTER_ADDRESSES } from '../constants/addresses'
+import { BACOOR_SWAP, PANGOLIN, SWAP_ROUTER_ADDRESSES, TRADER_JOE } from '../constants/addresses'
 import { TransactionType } from '../state/transactions/actions'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import approveAmountCalldata from '../utils/approveAmountCalldata'
@@ -96,6 +96,8 @@ function useSwapCallArguments(
       }
 
       return swapMethods.map(({ methodName, args, value }) => {
+        const newMethodName =
+          name === TRADER_JOE || name === PANGOLIN ? methodName.replaceAll('ETH', 'AVAX') : methodName
         if (argentWalletContract && trade.inputAmount.currency.isToken) {
           return {
             address: argentWalletContract.address,
@@ -105,7 +107,7 @@ function useSwapCallArguments(
                 {
                   to: routerContract.address,
                   value,
-                  data: routerContract.interface.encodeFunctionData(methodName, args),
+                  data: routerContract.interface.encodeFunctionData(newMethodName, args),
                 },
               ],
             ]),
@@ -114,7 +116,7 @@ function useSwapCallArguments(
         } else {
           return {
             address: routerContract.address,
-            calldata: routerContract.interface.encodeFunctionData(methodName, args),
+            calldata: routerContract.interface.encodeFunctionData(newMethodName, args),
             value,
           }
         }
