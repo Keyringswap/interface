@@ -521,7 +521,7 @@ export default function Swap({ history }: RouteComponentProps) {
     recipient,
     signatureData
   )
-
+  
   const handleSwap = useCallback(() => {
     if (!swapCallback) {
       return
