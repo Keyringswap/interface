@@ -44,6 +44,9 @@ const NETWORK_URLS = {
   [SupportedChainId.POLYGON_MAINET]: `https://polygon-rpc.com/`,
   [SupportedChainId.POLYGON_TESTNET]: `https://rpc-mumbai.matic.today`,
   [SupportedChainId.BSC_MAINNET]: `https://bsc-dataseed1.ninicoin.io`,
+  [SupportedChainId.BSC_TESTNET]: `https://data-seed-prebsc-2-s1.binance.org:8545`,
+  [SupportedChainId.AVALANCHE]: `https://api.avax.network/ext/bc/C/rpc`,
+  [SupportedChainId.AVALANCHE_TESTNET]: `https://api.avax-test.network/ext/bc/C/rpc`,
 }
 
 export const network = new NetworkConnector({
