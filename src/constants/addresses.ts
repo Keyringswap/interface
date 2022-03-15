@@ -26,6 +26,7 @@ import polydexLogoUrl from 'assets/images/polydex.png'
 import quickswapLogoUrl from 'assets/images/quickswap.png'
 import shibaswapLogoUrl from 'assets/images/shiba.png'
 import sushiswapLogoUrl from 'assets/images/sushi.svg'
+import swapRLogoUrl from 'assets/images/swapr.svg'
 import uniswapLogoUrl from 'assets/images/token-logo.png'
 import traderjoeLogoUrl from 'assets/images/traderjoe.png'
 
@@ -86,6 +87,8 @@ export const TRADER_JOE = 'TraderJoe'
 export const PANGOLIN = 'Pangolin'
 export const THORUS = 'Thorus'
 export const ELK_FINANCE = 'Elk'
+
+export const SWAPR = 'SwapR'
 
 // Polygon testnet
 
@@ -275,6 +278,26 @@ export const PANGOLIN_FACTORY_ADDRESS_AVAX: AddressMap = constructSameAddressMap
 
 export const PANGOLIN_INIT_CODE_HASH_AVAX = '0x40231f6b438bce0797c9ada29b718a87ea0a5cea3fe9a771abdd76bd41a3e545'
 
+export const SUSHI_ROUTER_ADDRESS_ARBITRUM: AddressMap = constructSameAddressMap(
+  '0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506'
+)
+
+export const SUSHI_FACTORY_ADDRESS_ARBITRUM: AddressMap = constructSameAddressMap(
+  '0xc35DADB65012eC5796536bD9864eD8773aBc74C4'
+)
+
+export const SUSHI_INIT_CODE_HASH_ARBITRUM = '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303'
+
+export const SWAPR_ROUTER_ADDRESS_ARBITRUM: AddressMap = constructSameAddressMap(
+  '0x530476d5583724A89c8841eB6Da76E7Af4C0F17E'
+)
+
+export const SWAPR_FACTORY_ADDRESS_ARBITRUM: AddressMap = constructSameAddressMap(
+  '0x359F20Ad0F42D75a5077e65F30274cABe6f4F01a'
+)
+
+export const SWAPR_INIT_CODE_HASH_ARBITRUM = '0xd306a548755b9295ee49cc729e13ca4a45e00199bbd890fa146da43a50571776'
+
 export const CHAIN_SWAP_NAMES: ChainSwapName = {
   [SupportedChainId.MAINNET]: [SUSHI_SWAP, UNI_SWAP, SHIBA_SWAP, KYBER_SWAP],
   [SupportedChainId.POLYGON_MAINET]: [SUSHI_SWAP, QUICK_SWAP, APE_SWAP, POLYCAT, POLYDEX],
@@ -282,6 +305,8 @@ export const CHAIN_SWAP_NAMES: ChainSwapName = {
   [SupportedChainId.POLYGON_TESTNET]: [SUSHI_SWAP, BACOOR_SWAP, UNI_SWAP],
   [SupportedChainId.AVALANCHE]: [SUSHI_SWAP, TRADER_JOE, PANGOLIN],
   [SupportedChainId.AVALANCHE_TESTNET]: [SUSHI_SWAP],
+  [SupportedChainId.ARBITRUM_ONE]: [SUSHI_SWAP, UNI_SWAP, SWAPR],
+  [SupportedChainId.ARBITRUM_RINKEBY]: [SUSHI_SWAP],
 }
 
 export const LOGO: { [key: string]: string } = {
@@ -298,6 +323,7 @@ export const LOGO: { [key: string]: string } = {
   [BABY_SWAP]: babyswapLogoUrl,
   [TRADER_JOE]: traderjoeLogoUrl,
   [PANGOLIN]: pangolinLogoUrl,
+  [SWAPR]: swapRLogoUrl,
 }
 
 export const CHAIN_SWAP_MAP: ChainSwapMap = {
@@ -436,6 +462,20 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       factoryAddresses: SUSHI_FACTORY_ADDRESS_AVAX,
       initCodeHash: SUSHI_INIT_CODE_HASH_AVAX,
       routerAddress: SUSHI_ROUTER_ADDRESS_AVAX,
+      computePairAddress,
+    },
+  },
+  [SupportedChainId.ARBITRUM_ONE]: {
+    [SUSHI_SWAP]: {
+      factoryAddresses: SUSHI_FACTORY_ADDRESS_ARBITRUM,
+      initCodeHash: SUSHI_INIT_CODE_HASH_ARBITRUM,
+      routerAddress: SUSHI_ROUTER_ADDRESS_ARBITRUM,
+      computePairAddress,
+    },
+    [SWAPR]: {
+      factoryAddresses: SWAPR_FACTORY_ADDRESS_ARBITRUM,
+      initCodeHash: SWAPR_INIT_CODE_HASH_ARBITRUM,
+      routerAddress: SWAPR_ROUTER_ADDRESS_ARBITRUM,
       computePairAddress,
     },
   },

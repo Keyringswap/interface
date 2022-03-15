@@ -63,6 +63,10 @@ const LOGO: { readonly [chainId in SupportedChainId]?: string } = {
   [SupportedChainId.BSC_TESTNET]: BNBLogo,
   [SupportedChainId.AVALANCHE]: AVAXLogo,
   [SupportedChainId.AVALANCHE_TESTNET]: AVAXLogo,
+  [SupportedChainId.ARBITRUM_ONE]: EthereumLogo,
+  [SupportedChainId.ARBITRUM_RINKEBY]: EthereumLogo,
+  [SupportedChainId.OPTIMISM]: EthereumLogo,
+  [SupportedChainId.OPTIMISTIC_KOVAN]: EthereumLogo,
 }
 
 const unknown = 'https://raw.githubusercontent.com/sushiswap/icons/master/token/unknown.png'

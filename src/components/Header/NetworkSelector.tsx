@@ -376,7 +376,7 @@ export default function NetworkSelector() {
           <Row onSelectChain={handleChainSwitch} targetChain={SupportedChainId.BSC_MAINNET} />
           <Row onSelectChain={handleChainSwitch} targetChain={SupportedChainId.AVALANCHE} />
           <Row onSelectChain={handleChainSwitch} targetChain={SupportedChainId.ARBITRUM_ONE} />
-          <Row onSelectChain={handleChainSwitch} targetChain={SupportedChainId.OPTIMISM} />
+          {/* <Row onSelectChain={handleChainSwitch} targetChain={SupportedChainId.OPTIMISM} /> */}
         </FlyoutMenu>
       )}
     </SelectorWrapper>
