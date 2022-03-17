@@ -57,8 +57,11 @@ export type ChainSwapMap = { [chaindId: number]: { [name: string]: SwapInfo } }
 
 export const UNI_ADDRESS: AddressMap = constructSameAddressMap('0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984')
 export const MULTICALL_ADDRESS: AddressMap = {
-  ...constructSameAddressMap('0x1F98415757620B543A52E61c46B32eB19261F984', [SupportedChainId.OPTIMISTIC_KOVAN]),
-  [SupportedChainId.OPTIMISM]: '0x90f872b3d8f33f305e0250db6A2761B354f7710A',
+  ...constructSameAddressMap('0x1F98415757620B543A52E61c46B32eB19261F984', [
+    SupportedChainId.OPTIMISM,
+    SupportedChainId.OPTIMISTIC_KOVAN,
+  ]),
+  // [SupportedChainId.OPTIMISM]: '0x90f872b3d8f33f305e0250db6A2761B354f7710A',
   [SupportedChainId.ARBITRUM_ONE]: '0xadF885960B47eA2CD9B55E6DAc6B42b7Cb2806dB',
   [SupportedChainId.ARBITRUM_RINKEBY]: '0xa501c031958F579dB7676fF1CE78AD305794d579',
   [SupportedChainId.POLYGON_MAINET]: '0x895CA06c053Ec87C17124c566DD511E6eC4eCcb6',
@@ -298,6 +301,9 @@ export const SWAPR_FACTORY_ADDRESS_ARBITRUM: AddressMap = constructSameAddressMa
 
 export const SWAPR_INIT_CODE_HASH_ARBITRUM = '0xd306a548755b9295ee49cc729e13ca4a45e00199bbd890fa146da43a50571776'
 
+export const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000'
+export const HASH_ZERO = '0x0000000000000000000000000000000000000000000000000000000000000000'
+
 export const CHAIN_SWAP_NAMES: ChainSwapName = {
   [SupportedChainId.MAINNET]: [SUSHI_SWAP, UNI_SWAP, SHIBA_SWAP, KYBER_SWAP],
   [SupportedChainId.POLYGON_MAINET]: [SUSHI_SWAP, QUICK_SWAP, APE_SWAP, POLYCAT, POLYDEX],
@@ -307,6 +313,7 @@ export const CHAIN_SWAP_NAMES: ChainSwapName = {
   [SupportedChainId.AVALANCHE_TESTNET]: [SUSHI_SWAP],
   [SupportedChainId.ARBITRUM_ONE]: [SUSHI_SWAP, UNI_SWAP, SWAPR],
   [SupportedChainId.ARBITRUM_RINKEBY]: [SUSHI_SWAP],
+  [SupportedChainId.OPTIMISM]: [SUSHI_SWAP, UNI_SWAP],
 }
 
 export const LOGO: { [key: string]: string } = {
@@ -472,10 +479,30 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       routerAddress: SUSHI_ROUTER_ADDRESS_ARBITRUM,
       computePairAddress,
     },
+    [UNI_SWAP]: {
+      factoryAddresses: UNI_FACTORY_ADDRESSES_ETH,
+      initCodeHash: UNI_INIT_CODE_HASH_ETH,
+      routerAddress: UNI_ROUTER_ADDRESS_ETH,
+      computePairAddress,
+    },
     [SWAPR]: {
       factoryAddresses: SWAPR_FACTORY_ADDRESS_ARBITRUM,
       initCodeHash: SWAPR_INIT_CODE_HASH_ARBITRUM,
       routerAddress: SWAPR_ROUTER_ADDRESS_ARBITRUM,
+      computePairAddress,
+    },
+  },
+  [SupportedChainId.OPTIMISM]: {
+    [SUSHI_SWAP]: {
+      factoryAddresses: SUSHI_FACTORY_ADDRESS_ARBITRUM,
+      initCodeHash: SUSHI_INIT_CODE_HASH_ARBITRUM,
+      routerAddress: SUSHI_ROUTER_ADDRESS_ARBITRUM,
+      computePairAddress,
+    },
+    [UNI_SWAP]: {
+      factoryAddresses: UNI_FACTORY_ADDRESSES_ETH,
+      initCodeHash: UNI_INIT_CODE_HASH_ETH,
+      routerAddress: UNI_ROUTER_ADDRESS_ETH,
       computePairAddress,
     },
   },
