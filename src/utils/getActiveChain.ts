@@ -50,6 +50,10 @@ export function getActiveChainBaseOnUrl(): number {
       return SupportedChainId.ARBITRUM_ONE
     case 'arbitrum-test':
       return SupportedChainId.ARBITRUM_RINKEBY
+    case 'optimism':
+      return SupportedChainId.OPTIMISM
+    case 'optimism-test':
+      return SupportedChainId.OPTIMISTIC_KOVAN
     default:
       return SupportedChainId.MAINNET
   }
