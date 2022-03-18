@@ -13,7 +13,7 @@ import getLibrary from '../utils/getLibrary'
 import { FortmaticConnector } from './Fortmatic'
 import { NetworkConnector } from './NetworkConnector'
 
-const INFURA_KEY = 'd1fc98bbf52c4e79b193049e6342b0bf'
+const INFURA_KEY = '9b8e7f3460ce4b8b98ad350ba0be2fc2'
 const FORMATIC_KEY = process.env.REACT_APP_FORTMATIC_KEY
 const PORTIS_ID = process.env.REACT_APP_PORTIS_ID
 
@@ -28,7 +28,7 @@ export const randomInfuraKey = () => {
     keys.push(process.env[infuraIndex])
   }
   const key = keys[Math.floor(Math.random() * keys.length)]
-  return 'd1fc98bbf52c4e79b193049e6342b0bf'
+  return key
 }
 
 const NETWORK_URLS = {
@@ -37,10 +37,10 @@ const NETWORK_URLS = {
   [SupportedChainId.ROPSTEN]: `https://ropsten.infura.io/v3/${randomInfuraKey()}`,
   [SupportedChainId.GOERLI]: `https://goerli.infura.io/v3/${randomInfuraKey()}`,
   [SupportedChainId.KOVAN]: `https://kovan.infura.io/v3/${randomInfuraKey()}`,
-  [SupportedChainId.OPTIMISM]: `https://optimism-mainnet.infura.io/v3/${randomInfuraKey()}`,
+  [SupportedChainId.OPTIMISM]: `https://mainnet.optimism.io`,
   [SupportedChainId.OPTIMISTIC_KOVAN]: `https://optimism-kovan.infura.io/v3/${randomInfuraKey()}`,
-  [SupportedChainId.ARBITRUM_ONE]: `https://arbitrum-mainnet.infura.io/v3/${randomInfuraKey()}`,
-  [SupportedChainId.ARBITRUM_RINKEBY]: `https://arbitrum-rinkeby.infura.io/v3/${randomInfuraKey()}`,
+  [SupportedChainId.ARBITRUM_ONE]: `https://arb1.arbitrum.io/rpc`,
+  [SupportedChainId.ARBITRUM_RINKEBY]: `https://rinkeby.arbitrum.io/rpc`,
   [SupportedChainId.POLYGON_MAINET]: `https://polygon-rpc.com/`,
   [SupportedChainId.POLYGON_TESTNET]: `https://rpc-mumbai.matic.today`,
   [SupportedChainId.BSC_MAINNET]: `https://bsc-dataseed1.ninicoin.io`,
