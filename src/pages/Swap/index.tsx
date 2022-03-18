@@ -707,7 +707,7 @@ export default function Swap({ history }: RouteComponentProps) {
                 disabled={true}
                 customNode={
                   <>
-                    {sortedTrades.slice(0, 3).map(({ name, logo, amountOut }) => (
+                    {sortedTrades.slice(0, chainId !== SupportedChainId.OPTIMISM ? 3 : 1).map(({ name, logo, amountOut }) => (
                       <ActiveOutlinedButton
                         key={name}
                         name={name}
