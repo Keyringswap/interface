@@ -1011,20 +1011,6 @@ export default function Swap({ history }: RouteComponentProps) {
           currencies={[currencies[Field.INPUT], currencies[Field.OUTPUT]]}
         />
       )}
-      <Chains>
-        <ChainItem href='https://swap-eth.keyring.app/#/swap' target='_blank'>
-          <ChainLogo src={CHAIN_INFO[SupportedChainId.MAINNET].logoUrl} />
-          <ChainLabel>Ethereum</ChainLabel>
-        </ChainItem>
-        <ChainItem href='https://swap-bsc.keyring.app/#/swap' target='_blank'>
-          <ChainLogo src={CHAIN_INFO[SupportedChainId.BSC_MAINNET].logoUrl} />
-          <ChainLabel>BSC</ChainLabel>
-        </ChainItem>
-        <ChainItem href='https://swap-polygon.keyring.app/#/swap' target='_blank'>
-          <ChainLogo src={CHAIN_INFO[SupportedChainId.POLYGON_MAINET].logoUrl} />
-          <ChainLabel>Polygon</ChainLabel>
-        </ChainItem>
-      </Chains>
     </>
   )
 }
