@@ -1,4 +1,4 @@
-import { NATIVE } from '@duythao_bacoor/v2-sdk'
+import { NATIVE } from '@keyringswap/v2-sdk'
 import { Trans } from '@lingui/macro'
 import useScrollPosition from '@react-hook/window-scroll'
 import { CHAIN_INFO, SupportedChainId } from 'constants/chains'

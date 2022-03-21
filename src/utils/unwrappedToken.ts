@@ -1,4 +1,4 @@
-import { NATIVE } from '@duythao_bacoor/v2-sdk'
+import { NATIVE } from '@keyringswap/v2-sdk'
 import { Currency } from '@uniswap/sdk-core'
 
 import { ExtendedEther, WETH9_EXTENDED } from '../constants/tokens'

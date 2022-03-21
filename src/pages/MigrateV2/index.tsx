@@ -1,6 +1,6 @@
-import { Pair } from '@duythao_bacoor/v2-sdk'
 import { getCreate2Address } from '@ethersproject/address'
 import { keccak256, pack } from '@ethersproject/solidity'
+import { Pair } from '@keyringswap/v2-sdk'
 import { Trans } from '@lingui/macro'
 import { Token } from '@uniswap/sdk-core'
 import MigrateSushiPositionCard from 'components/PositionCard/Sushi'

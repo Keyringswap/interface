@@ -1,4 +1,4 @@
-import { Pair } from '@duythao_bacoor/v2-sdk'
+import { Pair } from '@keyringswap/v2-sdk'
 import { Trans } from '@lingui/macro'
 import { Currency, CurrencyAmount, Percent, Price, Token } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'

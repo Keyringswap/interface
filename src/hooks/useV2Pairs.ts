@@ -1,5 +1,5 @@
-import { Pair } from '@duythao_bacoor/v2-sdk'
 import { Interface } from '@ethersproject/abi'
+import { Pair } from '@keyringswap/v2-sdk'
 import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import useDefaultChainId from 'hooks/useDefaultChainId'
