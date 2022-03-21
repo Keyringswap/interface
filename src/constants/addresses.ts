@@ -313,7 +313,7 @@ export const CHAIN_SWAP_NAMES: ChainSwapName = {
   [SupportedChainId.AVALANCHE_TESTNET]: [SUSHI_SWAP],
   [SupportedChainId.ARBITRUM_ONE]: [SUSHI_SWAP, UNI_SWAP, SWAPR],
   [SupportedChainId.ARBITRUM_RINKEBY]: [SUSHI_SWAP],
-  [SupportedChainId.OPTIMISM]: [SUSHI_SWAP, UNI_SWAP],
+  [SupportedChainId.OPTIMISM]: [UNI_SWAP],
 }
 
 export const LOGO: { [key: string]: string } = {

@@ -28,7 +28,7 @@ export const randomInfuraKey = () => {
     keys.push(process.env[infuraIndex])
   }
   const key = keys[Math.floor(Math.random() * keys.length)]
-  return key
+  return INFURA_KEY
 }
 
 const NETWORK_URLS = {

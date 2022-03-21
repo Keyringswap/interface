@@ -317,7 +317,7 @@ export default function Swap({ history }: RouteComponentProps) {
   // swap state
   const { independentField, typedValue, recipient } = useSwapState()
 
-  const [selectedSwap, setSelectedSwap] = useState<string>(SUSHI_SWAP)
+  const [selectedSwap, setSelectedSwap] = useState<string>(CHAIN_SWAP_NAMES[chainId ?? SupportedChainId.POLYGON_MAINET][0])
 
   const refData = useRef<any>({})
 
@@ -332,10 +332,10 @@ export default function Swap({ history }: RouteComponentProps) {
     parsedAmount: parsedAmountBacoor,
     currencies: currenciesBacoor,
     inputError: swapInputErrorBacoor,
-  } = useDerivedSwapInfo(SUSHI_SWAP, toggledVersion)
+  } = useDerivedSwapInfo(CHAIN_SWAP_NAMES[chainId ?? SupportedChainId.POLYGON_MAINET][0], toggledVersion)
 
   const tradeMapInit: TradeMap = {
-    [SUSHI_SWAP]: {
+    [CHAIN_SWAP_NAMES[chainId ?? SupportedChainId.POLYGON_MAINET][0]]: {
       trade: tradeBacoor,
       v3TradeState: v3TradeStateBacoor,
       allowedSlippage: allowedSlippageBacoor,
@@ -343,14 +343,14 @@ export default function Swap({ history }: RouteComponentProps) {
       parsedAmount: parsedAmountBacoor,
       currencies: currenciesBacoor,
       swapInputError: swapInputErrorBacoor,
-      name: SUSHI_SWAP,
+      name: CHAIN_SWAP_NAMES[chainId ?? SupportedChainId.POLYGON_MAINET][0],
     },
   }
 
   const [tradeMap, setTradeMap] = useState<TradeMap>(tradeMapInit)
 
   useEffect(() => {
-    setSelectedSwap(SUSHI_SWAP)
+    setSelectedSwap(CHAIN_SWAP_NAMES[chainId ?? SupportedChainId.POLYGON_MAINET][0])
   }, [chainId])
 
   useEffect(() => {
