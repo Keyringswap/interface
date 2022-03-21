@@ -39,7 +39,7 @@ const NETWORK_URLS = {
   [SupportedChainId.KOVAN]: `https://kovan.infura.io/v3/${randomInfuraKey()}`,
   [SupportedChainId.OPTIMISM]: `https://optimism-mainnet.infura.io/v3/${randomInfuraKey()}`,
   [SupportedChainId.OPTIMISTIC_KOVAN]: `https://optimism-kovan.infura.io/v3/${randomInfuraKey()}`,
-  [SupportedChainId.ARBITRUM_ONE]: `https://arbitrum-mainnet.infura.io/v3/${randomInfuraKey()}`,
+  [SupportedChainId.ARBITRUM_ONE]: `https://arbitrum.getblock.io/mainnet?api_key=d98b95bf-d882-4fe9-9a63-2be28d6f2db9`,
   [SupportedChainId.ARBITRUM_RINKEBY]: `https://arbitrum-rinkeby.infura.io/v3/${randomInfuraKey()}`,
   [SupportedChainId.POLYGON_MAINET]: `https://polygon-rpc.com/`,
   [SupportedChainId.POLYGON_TESTNET]: `https://rpc-mumbai.matic.today`,
