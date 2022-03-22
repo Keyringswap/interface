@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Trade as V2Trade } from '@duythao_bacoor/v2-sdk'
+import { Trade as V2Trade } from '@keyringswap/v2-sdk'
 import { Trans } from '@lingui/macro'
 import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sdk-core'
 import { Trade as V3Trade } from '@uniswap/v3-sdk'
@@ -317,7 +317,7 @@ export default function Swap({ history }: RouteComponentProps) {
   // swap state
   const { independentField, typedValue, recipient } = useSwapState()
 
-  const [selectedSwap, setSelectedSwap] = useState<string>(SUSHI_SWAP)
+  const [selectedSwap, setSelectedSwap] = useState<string>(CHAIN_SWAP_NAMES[chainId ?? SupportedChainId.POLYGON_MAINET][0])
 
   const refData = useRef<any>({})
 
@@ -332,10 +332,10 @@ export default function Swap({ history }: RouteComponentProps) {
     parsedAmount: parsedAmountBacoor,
     currencies: currenciesBacoor,
     inputError: swapInputErrorBacoor,
-  } = useDerivedSwapInfo(SUSHI_SWAP, toggledVersion)
+  } = useDerivedSwapInfo(CHAIN_SWAP_NAMES[chainId ?? SupportedChainId.POLYGON_MAINET][0], toggledVersion)
 
   const tradeMapInit: TradeMap = {
-    [SUSHI_SWAP]: {
+    [CHAIN_SWAP_NAMES[chainId ?? SupportedChainId.POLYGON_MAINET][0]]: {
       trade: tradeBacoor,
       v3TradeState: v3TradeStateBacoor,
       allowedSlippage: allowedSlippageBacoor,
@@ -343,14 +343,14 @@ export default function Swap({ history }: RouteComponentProps) {
       parsedAmount: parsedAmountBacoor,
       currencies: currenciesBacoor,
       swapInputError: swapInputErrorBacoor,
-      name: SUSHI_SWAP,
+      name: CHAIN_SWAP_NAMES[chainId ?? SupportedChainId.POLYGON_MAINET][0],
     },
   }
 
   const [tradeMap, setTradeMap] = useState<TradeMap>(tradeMapInit)
 
   useEffect(() => {
-    setSelectedSwap(SUSHI_SWAP)
+    setSelectedSwap(CHAIN_SWAP_NAMES[chainId ?? SupportedChainId.POLYGON_MAINET][0])
   }, [chainId])
 
   useEffect(() => {
@@ -521,7 +521,7 @@ export default function Swap({ history }: RouteComponentProps) {
     recipient,
     signatureData
   )
-
+  
   const handleSwap = useCallback(() => {
     if (!swapCallback) {
       return
@@ -642,7 +642,7 @@ export default function Swap({ history }: RouteComponentProps) {
         onConfirm={handleConfirmTokenWarning}
         onDismiss={handleDismissTokenWarning}
       />
-      <NetworkAlert />
+      {/* <NetworkAlert /> */}
       <AppBody>
         <SwapHeader allowedSlippage={allowedSlippage} />
         <Wrapper id="swap-page">
@@ -707,7 +707,7 @@ export default function Swap({ history }: RouteComponentProps) {
                 disabled={true}
                 customNode={
                   <>
-                    {sortedTrades.slice(0, 3).map(({ name, logo, amountOut }) => (
+                    {sortedTrades.slice(0, chainId !== SupportedChainId.OPTIMISM ? 3 : 1).map(({ name, logo, amountOut }) => (
                       <ActiveOutlinedButton
                         key={name}
                         name={name}

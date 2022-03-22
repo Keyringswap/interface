@@ -16,6 +16,7 @@ import ENS_ABI from 'abis/ens-registrar.json'
 import ERC20_ABI from 'abis/erc20.json'
 import ERC20_BYTES32_ABI from 'abis/erc20_bytes32.json'
 import GOVERNOR_BRAVO_ABI from 'abis/governor-bravo.json'
+import TRADER_JOE_V2_ROUTER_ABI from 'abis/TraderJoeV2Router02.json'
 import WETH_ABI from 'abis/weth.json'
 import {
   ARGENT_WALLET_DETECTOR_ADDRESS,
@@ -28,7 +29,9 @@ import {
   MERKLE_DISTRIBUTOR_ADDRESS,
   MULTICALL_ADDRESS,
   NONFUNGIBLE_POSITION_MANAGER_ADDRESSES,
+  PANGOLIN,
   QUOTER_ADDRESSES,
+  TRADER_JOE,
   V3_MIGRATOR_ADDRESSES,
 } from 'constants/addresses'
 import useDefaultChainId from 'hooks/useDefaultChainId'
@@ -117,7 +120,11 @@ export function useV2RouterContract(name?: string): Contract | null {
       : CHAIN_SWAP_MAP[SupportedChainId.POLYGON_MAINET][CHAIN_SWAP_NAMES[SupportedChainId.POLYGON_MAINET][0]]
           .routerAddress
 
-  return useContract(routerAddress, IUniswapV2Router02ABI, true)
+  return useContract(
+    routerAddress,
+    name === TRADER_JOE || name === PANGOLIN ? TRADER_JOE_V2_ROUTER_ABI : IUniswapV2Router02ABI,
+    true
+  )
 }
 
 export function useMulticall2Contract() {

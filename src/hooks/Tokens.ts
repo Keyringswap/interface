@@ -1,6 +1,6 @@
-import { NATIVE, WNATIVE } from '@duythao_bacoor/v2-sdk'
 import { arrayify } from '@ethersproject/bytes'
 import { parseBytes32String } from '@ethersproject/strings'
+import { NATIVE, WNATIVE } from '@keyringswap/v2-sdk'
 import { Currency, Token } from '@uniswap/sdk-core'
 import useDefaultChainId from 'hooks/useDefaultChainId'
 import { useMemo } from 'react'

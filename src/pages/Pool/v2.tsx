@@ -1,4 +1,4 @@
-import { Pair } from '@duythao_bacoor/v2-sdk'
+import { Pair } from '@keyringswap/v2-sdk'
 import { Trans } from '@lingui/macro'
 import { L2_CHAIN_IDS } from 'constants/chains'
 import JSBI from 'jsbi'

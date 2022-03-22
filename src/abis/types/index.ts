@@ -9,6 +9,7 @@ export type { EnsRegistrar } from "./EnsRegistrar";
 export type { Erc20Bytes32 } from "./Erc20Bytes32";
 export type { Erc20 } from "./Erc20";
 export type { GovernorBravo } from "./GovernorBravo";
+export type { TraderJoeV2Router02 } from "./TraderJoeV2Router02";
 export type { Weth } from "./Weth";
 
 export { ArgentWalletContract__factory } from "./factories/ArgentWalletContract__factory";
@@ -19,4 +20,5 @@ export { EnsRegistrar__factory } from "./factories/EnsRegistrar__factory";
 export { Erc20Bytes32__factory } from "./factories/Erc20Bytes32__factory";
 export { Erc20__factory } from "./factories/Erc20__factory";
 export { GovernorBravo__factory } from "./factories/GovernorBravo__factory";
+export { TraderJoeV2Router02__factory } from "./factories/TraderJoeV2Router02__factory";
 export { Weth__factory } from "./factories/Weth__factory";

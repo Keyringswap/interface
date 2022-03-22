@@ -145,12 +145,10 @@ export function outdatedListeningKeys(
 
 export default function Updater(): null {
   const dispatch = useAppDispatch()
-  const numberCalls = useRef(0)
   const state = useAppSelector((state) => state.multicall)
   // wait for listeners to settle before triggering updates
   const debouncedListeners = useDebounce(state.callListeners, 100)
   const latestBlockNumber = useBlockNumber()
-  numberCalls.current++
   // const { chainId } = useActiveWeb3React()
   const [chainId] = useDefaultChainId()
 
@@ -204,8 +202,6 @@ export default function Updater(): null {
         })
         promise
           .then((returnData) => {
-            numberCalls.current++
-            console.log('Number of calls', numberCalls.current)
             // split the returned slice into errors and results
             const { erroredCalls, results } = chunk.reduce<{
               erroredCalls: Call[]

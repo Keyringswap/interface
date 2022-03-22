@@ -1,5 +1,5 @@
 // a list of tokens by chain
-import { NATIVE } from '@duythao_bacoor/v2-sdk'
+import { NATIVE } from '@keyringswap/v2-sdk'
 import { Currency, Token } from '@uniswap/sdk-core'
 
 import { SupportedChainId } from './chains'

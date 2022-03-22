@@ -1,5 +1,5 @@
-import { Pair } from '@duythao_bacoor/v2-sdk'
 import { Interface } from '@ethersproject/abi'
+import { Pair } from '@keyringswap/v2-sdk'
 import { Trans } from '@lingui/macro'
 import { abi as STAKING_REWARDS_ABI } from '@uniswap/liquidity-staker/build/StakingRewards.json'
 import { CurrencyAmount, Token } from '@uniswap/sdk-core'
