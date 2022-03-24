@@ -23,8 +23,8 @@ export function useBestV3Trade(
   state: V3TradeState
   trade: Trade<Currency, Currency, typeof tradeType> | null
 } {
-  // const routingAPIEnabled = useRoutingAPIEnabled()
-  const routingAPIEnabled = false
+  const routingAPIEnabled = useRoutingAPIEnabled()
+  //   const routingAPIEnabled = false
   const isWindowVisible = useIsWindowVisible()
 
   const [debouncedAmount, debouncedOtherCurrency] = useDebounce([amountSpecified, otherCurrency], 200)
