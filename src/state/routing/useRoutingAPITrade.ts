@@ -20,6 +20,8 @@ function useFreshData<T>(data: T, dataBlockNumber: number, maxBlockAge = 10): T 
   return data
 }
 
+const routingApiClientId = Math.random().toString(36).substring(2, 15)
+
 /**
  * Returns query arguments for the Routing API query or undefined if the
  * query should be skipped.
@@ -46,6 +48,7 @@ function useRoutingAPIArguments({
     tokenOutChainId: tokenOut.chainId,
     amount: amount.quotient.toString(),
     type: (tradeType === TradeType.EXACT_INPUT ? 'exactIn' : 'exactOut') as 'exactIn' | 'exactOut',
+    clientId: routingApiClientId,
   }
 }
 
