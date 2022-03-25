@@ -7,7 +7,7 @@ import { GetQuoteResult } from './types'
 export const routingApi = createApi({
   reducerPath: 'routingApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://fake-caller.herokuapp.com/',
+    baseUrl: 'https://forwarduni.w3w.app/',
   }),
   endpoints: (build) => ({
     getQuote: build.query<
