@@ -27,7 +27,7 @@ import { ExternalLink, MEDIA_WIDTHS } from 'theme'
 import { getActiveChainBaseOnUrl } from 'utils/getActiveChain'
 import { replaceURLParam } from 'utils/routes'
 import { supportedChainId } from 'utils/supportedChainId'
-import { switchToNetwork } from 'utils/switchToNetwork'
+import { deepLinkOpenDapp, switchToNetwork } from 'utils/switchToNetwork'
 
 const ActiveRowLinkList = styled.div`
   display: flex;
@@ -188,12 +188,12 @@ const getParsedChainId = (parsedQs?: ParsedQs) => {
 const getChainNameFromId = (id: string | number) => {
   // casting here may not be right but fine to return undefined if it's not a supported chain ID
   const data = CHAIN_IDS_TO_NAMES[id as SupportedChainId] || ''
-  console.log('data', data, id)
+  // console.log('data', data, id)
   return data
 }
 
 export default function NetworkSelector() {
-  const { library, account } = useActiveWeb3React()
+  const { library, account, connector } = useActiveWeb3React()
 
   const [chainId] = useDefaultChainId()
   const prevChainId = usePrevious(chainId)
@@ -244,6 +244,7 @@ export default function NetworkSelector() {
       history.replace({
         search: replaceURLParam(history.location.search, 'chain', getChainNameFromId(targetChain)),
       })
+      deepLinkOpenDapp(connector)
       switchToNetwork({ library, chainId: targetChain })
         .then(() => {
           if (!skipToggle) {
@@ -269,7 +270,7 @@ export default function NetworkSelector() {
           dispatch(addPopup({ content: { failedSwitchNetwork: targetChain }, key: `failed-network-switch` }))
         })
     },
-    [dispatch, library, toggle, history, chainId, account]
+    [dispatch, library, toggle, history, chainId, account, connector]
   )
 
   function Row({ targetChain, onSelectChain }: { targetChain: number; onSelectChain: (targetChain: number) => void }) {

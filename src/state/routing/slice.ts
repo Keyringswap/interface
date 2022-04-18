@@ -7,7 +7,7 @@ import { GetQuoteResult } from './types'
 export const routingApi = createApi({
   reducerPath: 'routingApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://0317-115-79-195-10.ngrok.io/',
+    baseUrl: 'https://forwarduni.w3w.app/',
   }),
   endpoints: (build) => ({
     getQuote: build.query<
@@ -19,6 +19,7 @@ export const routingApi = createApi({
         tokenOutChainId: SupportedChainId
         amount: string
         type: 'exactIn' | 'exactOut'
+        clientId: string
       }
     >({
       query: (args) => `quote?${qs.stringify(args)}`,

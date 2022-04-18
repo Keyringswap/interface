@@ -1,7 +1,9 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { hexStripZeros } from '@ethersproject/bytes'
 import { Web3Provider } from '@ethersproject/providers'
+import { isAndroid } from '@walletconnect/browser-utils'
 import { CHAIN_INFO, SupportedChainId } from 'constants/chains'
+import { isMobile } from 'utils/userAgent'
 
 import { addNetwork } from './addNetwork'
 
@@ -39,4 +41,19 @@ export async function switchToNetwork({ library, chainId }: SwitchNetworkArgumen
       throw error
     }
   }
+}
+
+export const deepLinkOpenDapp = (connector: any, nameCompare = 'keyring') => {
+  try {
+    const bridgeInfo = connector?.config?.bridge ?? ''
+    if (bridgeInfo.includes(nameCompare) && isMobile) {
+      if (connector && connector.walletConnectProvider) {
+        const handshakeTopic =
+          connector?.walletConnectProvider?.wc?._handshakeTopic ||
+          connector?.walletConnectProvider?.signer?.connection?.wc?._handshakeTopic
+        const uri = `wc:${handshakeTopic}@1`
+        window.location.href = isAndroid() ? `https://keyring.app/wc?uri=${uri}` : `keyring://keyring.app/wc?uri=${uri}`
+      }
+    }
+  } catch (e) {}
 }
