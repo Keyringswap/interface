@@ -241,18 +241,18 @@ export default function NetworkSelector() {
   const handleChainSwitch = useCallback(
     (targetChain: number, skipToggle?: boolean) => {
       if (!library) return
+      history.replace({
+        search: replaceURLParam(history.location.search, 'chain', getChainNameFromId(targetChain)),
+      })
       deepLinkOpenDapp(connector)
       switchToNetwork({ library, chainId: targetChain })
         .then(() => {
           if (!skipToggle) {
             toggle()
           }
-          history.replace({
-            search: replaceURLParam(history.location.search, 'chain', getChainNameFromId(targetChain)),
-          })
-          if (account === null || account === undefined) {
-            window.location.reload()
-          }
+          // if (account === null || account === undefined) {
+          //   window.location.reload()
+          // }
         })
         .catch((error) => {
           console.error('Failed to switch networks', error)
