@@ -230,8 +230,12 @@ export default function WalletModal({
               //   target: '_blank',
               //   href: android ? `https://keyring.app/wc?uri=${uri}` : `keyring://keyring.app/wc?uri=${uri}`,
               // }).click()
+              // window.location.href = android
+              //   ? `https://keyring.app/wc?uri=${uri}`
+              //   : `keyring://keyring.app/wc?uri=${uri}`
+              // alert('2323')
               window.location.href = android
-                ? `https://keyring.app/wc?uri=${uri}`
+                ? `keyring://wc/wc?uri=${encodeURIComponent(uri)}`
                 : `keyring://keyring.app/wc?uri=${uri}`
               first = false
             }

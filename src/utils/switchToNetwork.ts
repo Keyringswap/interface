@@ -47,27 +47,16 @@ export const deepLinkOpenDapp = (connector: any, nameCompare = 'keyring') => {
   try {
     const bridgeInfo = connector?.config?.bridge ?? ''
     if (bridgeInfo.includes(nameCompare) && isMobile) {
-      // if (connector && connector.walletConnectProvider) {
-      //   const handshakeTopic =
-      //     connector?.walletConnectProvider?.wc?._handshakeTopic ||
-      //     connector?.walletConnectProvider?.signer?.connection?.wc?._handshakeTopic
-      //   const uri = `wc:${handshakeTopic}@1`
-      //   window.location.href = isAndroid() ? `https://keyring.app/wc?uri=${uri}` : `keyring://keyring.app/wc?uri=${uri}`
-      // }
       if (connector && connector.walletConnectProvider) {
-        const keyTemp = connector?.walletConnectProvider?.wc?._key
-          ? new Uint8Array(connector?.walletConnectProvider?.wc?._key)
-          : new Uint8Array(connector?.walletConnectProvider?.signer?.connection?.wc?._key)
-        const key = [...new Uint8Array(keyTemp)].map((x) => x.toString(16).padStart(2, '0')).join('')
         const handshakeTopic =
           connector?.walletConnectProvider?.wc?._handshakeTopic ||
           connector?.walletConnectProvider?.signer?.connection?.wc?._handshakeTopic
-        const bridge = connector?.walletConnectProvider?.wc?._bridge
-          ? encodeURIComponent(connector?.walletConnectProvider?.wc?._bridge)
-          : encodeURIComponent(connector?.walletConnectProvider?.signer?.connection?.wc?._bridge)
-
-        const uri = `wc:${handshakeTopic}@1?bridge=${bridge}&key=${key}`
-        window.location.href = isAndroid() ? `https://keyring.app/wc?uri=${uri}` : `keyring://keyring.app/wc?uri=${uri}`
+        const uri = `wc:${handshakeTopic}@1`
+        // window.location.href = isAndroid() ? `https://keyring.app/wc?uri=${uri}` : `keyring://keyring.app/wc?uri=${uri}`
+        // window.location.href = `keyring://wc/wc?uri=${encodeURIComponent(uri)}`
+        window.location.href = isAndroid()
+          ? `keyring://wc/wc?uri=${encodeURIComponent(uri)}`
+          : `keyring://keyring.app/wc?uri=${uri}`
       }
     }
   } catch (e) {}
