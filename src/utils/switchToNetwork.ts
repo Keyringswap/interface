@@ -32,7 +32,7 @@ export async function switchToNetwork({ library, chainId }: SwitchNetworkArgumen
     if (error.code === 4902 && chainId !== undefined) {
       const info = CHAIN_INFO[chainId]
 
-      // metamask (only known implementer) automatically switches after a network is added
+      // metamask (only known implementer) automatically  switches after a network is added
       // the second call is done here because that behavior is not a part of the spec and cannot be relied upon in the future
       // metamask's behavior when switching to the current network is just to return null (a no-op)
       await addNetwork({ library, chainId, info })
@@ -47,11 +47,26 @@ export const deepLinkOpenDapp = (connector: any, nameCompare = 'keyring') => {
   try {
     const bridgeInfo = connector?.config?.bridge ?? ''
     if (bridgeInfo.includes(nameCompare) && isMobile) {
+      // if (connector && connector.walletConnectProvider) {
+      //   const handshakeTopic =
+      //     connector?.walletConnectProvider?.wc?._handshakeTopic ||
+      //     connector?.walletConnectProvider?.signer?.connection?.wc?._handshakeTopic
+      //   const uri = `wc:${handshakeTopic}@1`
+      //   window.location.href = isAndroid() ? `https://keyring.app/wc?uri=${uri}` : `keyring://keyring.app/wc?uri=${uri}`
+      // }
       if (connector && connector.walletConnectProvider) {
+        const keyTemp = connector?.walletConnectProvider?.wc?._key
+          ? new Uint8Array(connector?.walletConnectProvider?.wc?._key)
+          : new Uint8Array(connector?.walletConnectProvider?.signer?.connection?.wc?._key)
+        const key = [...new Uint8Array(keyTemp)].map((x) => x.toString(16).padStart(2, '0')).join('')
         const handshakeTopic =
           connector?.walletConnectProvider?.wc?._handshakeTopic ||
           connector?.walletConnectProvider?.signer?.connection?.wc?._handshakeTopic
-        const uri = `wc:${handshakeTopic}@1`
+        const bridge = connector?.walletConnectProvider?.wc?._bridge
+          ? encodeURIComponent(connector?.walletConnectProvider?.wc?._bridge)
+          : encodeURIComponent(connector?.walletConnectProvider?.signer?.connection?.wc?._bridge)
+
+        const uri = `wc:${handshakeTopic}@1?bridge=${bridge}&key=${key}`
         window.location.href = isAndroid() ? `https://keyring.app/wc?uri=${uri}` : `keyring://keyring.app/wc?uri=${uri}`
       }
     }
