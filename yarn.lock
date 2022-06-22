@@ -1250,17 +1250,6 @@
     tiny-invariant "^1.1.0"
     tiny-warning "^1.0.3"
 
-"@duythao_bacoor/v2-sdk@^3.0.16":
-  version "3.0.16"
-  resolved "https://registry.yarnpkg.com/@duythao_bacoor/v2-sdk/-/v2-sdk-3.0.16.tgz#faa122602eda11683efa09151db40f673ff14b3e"
-  integrity sha512-n0jegT8Lj/MAKpk51MEyWyOg2sKtO5HAO4StRgxsb5w0hHpQqlAlZhVsuMEqOgiXCE8SsnmPAU0SyCU8/Z0lKA==
-  dependencies:
-    "@ethersproject/address" "^5.0.0"
-    "@ethersproject/solidity" "^5.0.0"
-    "@uniswap/sdk-core" "^3.0.0-alpha.3"
-    tiny-invariant "^1.1.0"
-    tiny-warning "^1.0.3"
-
 "@emotion/cache@^10.0.27":
   version "10.0.29"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.29.tgz#87e7e64f412c060102d589fe7c6dc042e6f9d1e0"
@@ -3074,10 +3063,10 @@
     "@json-rpc-tools/types" "^1.7.6"
     "@pedrouid/environment" "^1.0.1"
 
-"@keyringswap/v2-sdk@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@keyringswap/v2-sdk/-/v2-sdk-1.0.3.tgz#07752c87613b92b487d8d3e8f1a01ea1b9a0c188"
-  integrity sha512-SBQpSfNgIlma09LAcNRHycNqaDYLhA7jiSxJX+cCmCNCywaE1qyUp5M3Glavj+w1kvYerI3wQPDos8GYkJnzKA==
+"@keyringswap/v2-sdk@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@keyringswap/v2-sdk/-/v2-sdk-1.0.4.tgz#01bd116809b832a8082fb25ea356b535ab9fe18f"
+  integrity sha512-nvSNdjkeUbMDfg1JeiVR1IQHYjjvOzlv45ea+gepAuNyFCQh4KkaeGCNgrybQik042C4aAvJfIBqRjKri4PN9g==
   dependencies:
     "@ethersproject/address" "^5.0.0"
     "@ethersproject/solidity" "^5.0.0"
