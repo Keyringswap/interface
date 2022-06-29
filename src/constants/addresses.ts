@@ -320,7 +320,7 @@ export const CHAIN_SWAP_NAMES: ChainSwapName = {
   [SupportedChainId.BSC_MAINNET]: [SUSHI_SWAP, PANCAKE_SWAP, BI_SWAP, APE_SWAP, BABY_SWAP],
   [SupportedChainId.POLYGON_TESTNET]: [SUSHI_SWAP, BACOOR_SWAP, UNI_SWAP],
   [SupportedChainId.AVALANCHE]: [SUSHI_SWAP, TRADER_JOE, PANGOLIN],
-  [SupportedChainId.AVALANCHE_TESTNET]: [SUSHI_SWAP],
+  [SupportedChainId.AVALANCHE_TESTNET]: [SUSHI_SWAP, TRADER_JOE],
   [SupportedChainId.ARBITRUM_ONE]: [SUSHI_SWAP, UNI_SWAP, SWAPR],
   [SupportedChainId.ARBITRUM_RINKEBY]: [SUSHI_SWAP],
   [SupportedChainId.OPTIMISM]: [UNI_SWAP],
@@ -476,6 +476,12 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
   },
   [SupportedChainId.AVALANCHE_TESTNET]: {
     [SUSHI_SWAP]: {
+      factoryAddresses: V2_SUSHI_FACTORY_ADDRESSES,
+      initCodeHash: SUSHI_INIT_CODE_HASH[ChainId.MATIC_TESTNET],
+      routerAddress: V2_SUSHI_ROUTER_ADDRESS,
+      computePairAddress,
+    },
+    [TRADER_JOE]: {
       factoryAddresses: TRADERJOE_FACTORY_ADDRESS_FUJI,
       initCodeHash: TRADERJOE_INIT_CODE_HASH_FUJI,
       routerAddress: TRADERJOE_ROUTER_ADDRESS_FUJI,
