@@ -271,6 +271,16 @@ export const TRADERJOE_FACTORY_ADDRESS_AVAX: AddressMap = constructSameAddressMa
 
 export const TRADERJOE_INIT_CODE_HASH_AVAX = '0x0bbca9af0511ad1a1da383135cf3a8d2ac620e549ef9f6ae3a4c33c2fed0af91'
 
+export const TRADERJOE_ROUTER_ADDRESS_FUJI: AddressMap = constructSameAddressMap(
+  '0x1E58825113886D1F2B32cB3a83c3294D620F2a89'
+)
+
+export const TRADERJOE_FACTORY_ADDRESS_FUJI: AddressMap = constructSameAddressMap(
+  '0x9274dAC997ca1b6D82a57388cca05749EeaD4581'
+)
+
+export const TRADERJOE_INIT_CODE_HASH_FUJI = '0x92f9b14ebc5e89b29771bf9ef4ea0ef19b7c17e4ec24e69a87ab6e120eacc3cb'
+
 export const PANGOLIN_ROUTER_ADDRESS_AVAX: AddressMap = constructSameAddressMap(
   '0xE54Ca86531e17Ef3616d22Ca28b0D458b6C89106'
 )
@@ -466,9 +476,9 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
   },
   [SupportedChainId.AVALANCHE_TESTNET]: {
     [SUSHI_SWAP]: {
-      factoryAddresses: SUSHI_FACTORY_ADDRESS_AVAX,
-      initCodeHash: SUSHI_INIT_CODE_HASH_AVAX,
-      routerAddress: SUSHI_ROUTER_ADDRESS_AVAX,
+      factoryAddresses: TRADERJOE_FACTORY_ADDRESS_FUJI,
+      initCodeHash: TRADERJOE_INIT_CODE_HASH_FUJI,
+      routerAddress: TRADERJOE_ROUTER_ADDRESS_FUJI,
       computePairAddress,
     },
   },
