@@ -66,6 +66,34 @@ export function getExplorerLink(chainId: number, data: string, type: ExplorerDat
     }
   }
 
+  if (chainId === SupportedChainId.AVALANCHE) {
+    switch (type) {
+      case ExplorerDataType.TRANSACTION:
+        return `https://snowtrace.io/tx/${data}`
+      case ExplorerDataType.ADDRESS:
+      case ExplorerDataType.TOKEN:
+        return `https://snowtrace.io/address/${data}`
+      case ExplorerDataType.BLOCK:
+        return `https://snowtrace.io/block/${data}`
+      default:
+        return `https://snowtrace.io/`
+    }
+  }
+
+  if (chainId === SupportedChainId.AVALANCHE_TESTNET) {
+    switch (type) {
+      case ExplorerDataType.TRANSACTION:
+        return `https://testnet.snowtrace.io/tx/${data}`
+      case ExplorerDataType.ADDRESS:
+      case ExplorerDataType.TOKEN:
+        return `https://testnet.snowtrace.io/address/${data}`
+      case ExplorerDataType.BLOCK:
+        return `https://testnet.snowtrace.io/block/${data}`
+      default:
+        return `https://testnet.snowtrace.io/`
+    }
+  }
+
   if (chainId === SupportedChainId.ARBITRUM_ONE) {
     switch (type) {
       case ExplorerDataType.TRANSACTION:
