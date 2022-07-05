@@ -52,6 +52,9 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     WBTC_ARBITRUM_ONE,
   ],
   [SupportedChainId.POLYGON_TESTNET]: [USDT_MUMBAI],
+  [SupportedChainId.AVALANCHE_TESTNET]: [
+    new Token(SupportedChainId.AVALANCHE_TESTNET, '0x4a05AB2b93652dfAf5E95Cb9acFed2E32513E741', 18, 'BT', 'BToken'),
+  ],
 }
 export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: Token[] } } = {
   [SupportedChainId.MAINNET]: {
