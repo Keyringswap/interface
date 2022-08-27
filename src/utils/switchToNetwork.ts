@@ -54,9 +54,10 @@ export const deepLinkOpenDapp = (connector: any, nameCompare = 'keyring') => {
         const uri = `wc:${handshakeTopic}@1`
         // window.location.href = isAndroid() ? `https://keyring.app/wc?uri=${uri}` : `keyring://keyring.app/wc?uri=${uri}`
         // window.location.href = `keyring://wc/wc?uri=${encodeURIComponent(uri)}`
-        window.location.href = isAndroid()
-          ? `keyring://wc/wc?uri=${encodeURIComponent(uri)}`
-          : `keyring://keyring.app/wc?uri=${uri}`
+        // window.location.href = isAndroid()
+        //   ? `keyring://wc/wc?uri=${encodeURIComponent(uri)}`
+        //   : `keyring://keyring.app/wc?uri=${uri}`
+        window.location.href = `keyring://wc/wc?uri=${encodeURIComponent(uri)}`
       }
     }
   } catch (e) {}
