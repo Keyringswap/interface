@@ -252,7 +252,6 @@ export default function WalletModal({
       activate(connector, undefined, true)
         .then(async () => {
           const walletAddress = await connector.getAccount()
-          console.log('tryActivation -> walletAddress', walletAddress)
           logMonitoringEvent({ walletAddress })
         })
         .catch((error) => {

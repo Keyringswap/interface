@@ -276,7 +276,6 @@ export default function Swap({ history }: RouteComponentProps) {
   // }
  
   const [chainId] = useDefaultChainId()
-  /* console.log('chainId Swap', chainId) */
   const previousChainId = usePrevious(chainId)
   const loadedUrlParams = useDefaultsFromURLSearch()
   const [darkMode] = useDarkModeManager()

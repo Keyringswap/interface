@@ -48,7 +48,6 @@ const initialState: ApplicationState = {
   popupList: [],
 }
 
-console.log('initialState', initialState)
 
 const applicationSlice = createSlice({
   name: 'application',

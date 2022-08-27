@@ -188,7 +188,6 @@ const getParsedChainId = (parsedQs?: ParsedQs) => {
 const getChainNameFromId = (id: string | number) => {
   // casting here may not be right but fine to return undefined if it's not a supported chain ID
   const data = CHAIN_IDS_TO_NAMES[id as SupportedChainId] || ''
-  // console.log('data', data, id)
   return data
 }
 
@@ -206,10 +205,6 @@ export default function NetworkSelector() {
   useOnClickOutside(node, open ? toggle : undefined)
   const implements3085 = useAppSelector((state) => state.application.implements3085)
   const info = chainId ? CHAIN_INFO[chainId] : urlChainId ? CHAIN_INFO[urlChainId] : undefined
-  // console.log('urlChainId', urlChainId)
-  // console.log('info', info)
-  // console.log('chainId', chainId)
-  // const isOnL2 = chainId ? L2_CHAIN_IDS.includes(chainId) : false
   const isOnL2 = true
   const showSelector = Boolean(implements3085 || isOnL2)
   // Only switch chain when active account

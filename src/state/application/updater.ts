@@ -67,7 +67,6 @@ function useBlockWarningTimer() {
 
 export default function Updater(): null {
   const { account, chainId, library } = useActiveWeb3React()
-  const numberCalls = useRef(0)
   const dispatch = useAppDispatch()
   const windowVisible = useIsWindowVisible()
 
@@ -104,8 +103,6 @@ export default function Updater(): null {
       .catch((error) => console.error(`Failed to get block number for chainId: ${chainId}`, error))
 
     library.on('block', blockNumberCallback)
-    numberCalls.current++
-    console.log('callBlock', numberCalls.current)
     return () => {
       library.removeListener('block', blockNumberCallback)
     }

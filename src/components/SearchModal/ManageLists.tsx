@@ -322,7 +322,6 @@ export function ManageLists({
       fetchList(listUrlInput, false)
         .then((list) => setTempList(list))
         .catch((error) => {
-          console.log('tokenlists', error)
           setAddError(t`Error importing list`)
         })
     }

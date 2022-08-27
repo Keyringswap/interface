@@ -89,7 +89,6 @@ export function CurrencySearch({
   const isAddressSearch = isAddress(debouncedQuery)
 
   const searchToken = useToken(debouncedQuery)
-  console.log('searchToken', searchToken)
   const searchTokenIsAdded = useIsUserAddedToken(searchToken)
 
   useEffect(() => {

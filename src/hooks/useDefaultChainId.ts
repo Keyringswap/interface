@@ -15,10 +15,4 @@ export default function (): [number | undefined] {
   }, [account, chainidAfterConnected])
 }
 
-// export default function () {
-//   const { chainId } = useActiveWeb3React()
-//   // console.log('useDefaultChainId', chainId)
-//   return useMemo(() => {
-//     return [chainId]
-//   }, [chainId])
-// }
+
