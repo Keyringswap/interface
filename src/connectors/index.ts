@@ -43,7 +43,7 @@ const NETWORK_URLS = {
   [SupportedChainId.ARBITRUM_ONE]: `https://arb1.arbitrum.io/rpc`,
   [SupportedChainId.ARBITRUM_RINKEBY]: `https://rinkeby.arbitrum.io/rpc`,
   [SupportedChainId.POLYGON_MAINET]: `https://polygon-rpc.com/`,
-  [SupportedChainId.POLYGON_TESTNET]: `https://rpc-mumbai.matic.today`,
+  [SupportedChainId.POLYGON_TESTNET]: `https://rpc.ankr.com/polygon_mumbai`,
   [SupportedChainId.BSC_MAINNET]: `https://bsc-dataseed1.ninicoin.io`,
   [SupportedChainId.BSC_TESTNET]: `https://data-seed-prebsc-2-s1.binance.org:8545`,
   [SupportedChainId.AVALANCHE]: `https://api.avax.network/ext/bc/C/rpc`,
