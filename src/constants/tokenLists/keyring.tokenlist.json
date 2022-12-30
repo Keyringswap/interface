@@ -121,6 +121,14 @@
       "chainId": 80001,
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/Keyringswap/assets/master/blockchains/mumbai/assets/0x3865638D3BC66633Cd74f41A3FA1Da229C606bfa/logo.png"
+    },
+    {
+      "name": "Sharefull Token",
+      "symbol": "STO",
+      "address": "0x3A8F96B53a80193845282FE163E4A31Fd851ea45",
+      "chainId": 43114,
+      "decimals": 18,
+      "logoURI": "https://ipfs.pantograph.app/ipfs/QmSBZUbkjdQhbbJ4BXf1RvfhiwLGqjbKi7zaVuXLV6Xu44?filename=zmQ8DnNI.png"
     }
   ]
 }
