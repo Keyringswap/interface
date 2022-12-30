@@ -20,7 +20,7 @@ const PANCAKE_LIST = 'https://tokens.pancakeswap.finance/pancakeswap-extended.js
 const KEYRING_LIST =
   'https://raw.githubusercontent.com/Keyringswap/interface/mainnet/src/constants/tokenLists/keyring.tokenlist.json'
 
-const TRADERJOE_LIST = 'https://raw.githubusercontent.com/traderjoe-xyz/joe-tokenlists/main/avalanche.tokenlist.json'
+const TRADERJOE_LIST = 'https://raw.githubusercontent.com/pangolindex/tokenlists/main/pangolin.tokenlist.json'
 
 export const UNSUPPORTED_LIST_URLS: string[] = [BA_LIST]
 
