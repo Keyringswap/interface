@@ -27,8 +27,8 @@ export const randomInfuraKey = () => {
     const infuraIndex = 'REACT_APP_INFURA_KEY_' + index
     keys.push(process.env[infuraIndex])
   }
-  const key = keys[Math.floor(Math.random() * keys.length)]
-  return key
+  // const key = keys[Math.floor(Math.random() * keys.length)]
+  return INFURA_KEY
 }
 
 const NETWORK_URLS = {
@@ -39,7 +39,6 @@ const NETWORK_URLS = {
   [SupportedChainId.KOVAN]: `https://kovan.infura.io/v3/${randomInfuraKey()}`,
   [SupportedChainId.OPTIMISM]: `https://mainnet.optimism.io`,
   [SupportedChainId.OPTIMISTIC_KOVAN]: `https://optimism-kovan.infura.io/v3/${randomInfuraKey()}`,
-  // [SupportedChainId.ARBITRUM_ONE]: `https://arbitrum.public-rpc.com`,
   [SupportedChainId.ARBITRUM_ONE]: `https://arb1.arbitrum.io/rpc`,
   [SupportedChainId.ARBITRUM_RINKEBY]: `https://rinkeby.arbitrum.io/rpc`,
   [SupportedChainId.POLYGON_MAINET]: `https://polygon-rpc.com/`,

@@ -29,6 +29,7 @@ import sushiswapLogoUrl from 'assets/images/sushi.svg'
 import swapRLogoUrl from 'assets/images/swapr.svg'
 import uniswapLogoUrl from 'assets/images/token-logo.png'
 import traderjoeLogoUrl from 'assets/images/traderjoe.png'
+import verseLogoUrl from 'assets/images/verse.png'
 
 import { constructSameAddressMap } from '../utils/constructSameAddressMap'
 import { SupportedChainId } from './chains'
@@ -117,7 +118,7 @@ export const UNKNOWN_LOGO = 'https://raw.githubusercontent.com/sushiswap/icons/m
 
 export const VERSE_ROUTER_ETH: AddressMap = constructSameAddressMap('0xB4B0ea46Fe0E9e8EAB4aFb765b527739F2718671')
 export const VERSE_FACTORY_ETH: AddressMap = constructSameAddressMap('0xee3E9E46E34a27dC755a63e2849C9913Ee1A06E2')
-export const VERSE_INIT_CODE_HASH_ETH = '0xea262aa87f6ccb1a5351d1f7d934b75bb08b6f766003e9969783ee5fe0ba7e6b'
+export const VERSE_INIT_CODE_HASH_ETH = '0x0a50f77f76135087ca96e2f94d9220fd6c435aa345a8de958603cb89c476cc02'
 
 export const SUSHI_ROUTER_ADDRESS_MAINNET: AddressMap = constructSameAddressMap(
   '0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506'
@@ -320,7 +321,7 @@ export const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000'
 export const HASH_ZERO = '0x0000000000000000000000000000000000000000000000000000000000000000'
 
 export const CHAIN_SWAP_NAMES: ChainSwapName = {
-  [SupportedChainId.MAINNET]: [UNI_SWAP, SUSHI_SWAP, SHIBA_SWAP, VERSE_SWAP],
+  [SupportedChainId.MAINNET]: [UNI_SWAP, SUSHI_SWAP, VERSE_SWAP],
   [SupportedChainId.POLYGON_MAINET]: [UNI_SWAP, SUSHI_SWAP, QUICK_SWAP, APE_SWAP, POLYCAT, POLYDEX],
   [SupportedChainId.BSC_MAINNET]: [SUSHI_SWAP, PANCAKE_SWAP, BI_SWAP, APE_SWAP, BABY_SWAP],
   [SupportedChainId.POLYGON_TESTNET]: [BACOOR_SWAP, SUSHI_SWAP, UNI_SWAP],
@@ -346,7 +347,7 @@ export const LOGO: { [key: string]: string } = {
   [TRADER_JOE]: traderjoeLogoUrl,
   [PANGOLIN]: pangolinLogoUrl,
   [SWAPR]: swapRLogoUrl,
-  [VERSE_SWAP]: swapRLogoUrl,
+  [VERSE_SWAP]: verseLogoUrl,
 }
 
 export const CHAIN_SWAP_MAP: ChainSwapMap = {
