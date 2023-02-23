@@ -60,6 +60,7 @@ export const MULTICALL_ADDRESS: AddressMap = {
   ...constructSameAddressMap('0x1F98415757620B543A52E61c46B32eB19261F984', [
     SupportedChainId.OPTIMISM,
     SupportedChainId.OPTIMISTIC_KOVAN,
+    SupportedChainId.POLYGON_MAINET,
   ]),
   // [SupportedChainId.OPTIMISM]: '0x90f872b3d8f33f305e0250db6A2761B354f7710A',
   [SupportedChainId.ARBITRUM_ONE]: '0xadF885960B47eA2CD9B55E6DAc6B42b7Cb2806dB',
@@ -320,7 +321,7 @@ export const HASH_ZERO = '0x0000000000000000000000000000000000000000000000000000
 
 export const CHAIN_SWAP_NAMES: ChainSwapName = {
   [SupportedChainId.MAINNET]: [UNI_SWAP, SUSHI_SWAP, SHIBA_SWAP, VERSE_SWAP],
-  [SupportedChainId.POLYGON_MAINET]: [SUSHI_SWAP, QUICK_SWAP, APE_SWAP, POLYCAT, POLYDEX],
+  [SupportedChainId.POLYGON_MAINET]: [UNI_SWAP, SUSHI_SWAP, QUICK_SWAP, APE_SWAP, POLYCAT, POLYDEX],
   [SupportedChainId.BSC_MAINNET]: [SUSHI_SWAP, PANCAKE_SWAP, BI_SWAP, APE_SWAP, BABY_SWAP],
   [SupportedChainId.POLYGON_TESTNET]: [BACOOR_SWAP, SUSHI_SWAP, UNI_SWAP],
   [SupportedChainId.AVALANCHE]: [SUSHI_SWAP, TRADER_JOE, PANGOLIN],
@@ -396,6 +397,12 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
     },
   },
   [SupportedChainId.POLYGON_MAINET]: {
+    [UNI_SWAP]: {
+      factoryAddresses: UNI_FACTORY_ADDRESSES_ETH,
+      initCodeHash: UNI_INIT_CODE_HASH_ETH,
+      routerAddress: UNI_ROUTER_ADDRESS_ETH,
+      computePairAddress,
+    },
     [SUSHI_SWAP]: {
       factoryAddresses: SUSHI_FACTORY_ADDRESSES_MAINNET,
       initCodeHash: SUSHI_INIT_CODE_HASH_MAINNET,
@@ -561,12 +568,14 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = constructSameAddressMap(V3_
   SupportedChainId.OPTIMISTIC_KOVAN,
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.ARBITRUM_RINKEBY,
+  SupportedChainId.POLYGON_MAINET,
 ])
 export const QUOTER_ADDRESSES: AddressMap = constructSameAddressMap('0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6', [
   SupportedChainId.OPTIMISM,
   SupportedChainId.OPTIMISTIC_KOVAN,
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.ARBITRUM_RINKEBY,
+  SupportedChainId.POLYGON_MAINET,
 ])
 export const NONFUNGIBLE_POSITION_MANAGER_ADDRESSES: AddressMap = constructSameAddressMap(
   '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
@@ -575,6 +584,7 @@ export const NONFUNGIBLE_POSITION_MANAGER_ADDRESSES: AddressMap = constructSameA
     SupportedChainId.OPTIMISTIC_KOVAN,
     SupportedChainId.ARBITRUM_ONE,
     SupportedChainId.ARBITRUM_RINKEBY,
+    SupportedChainId.POLYGON_MAINET,
   ]
 )
 export const ENS_REGISTRAR_ADDRESSES: AddressMap = {
@@ -587,6 +597,7 @@ export const SOCKS_CONTROLLER_ADDRESSES: AddressMap = {
   [SupportedChainId.MAINNET]: '0x65770b5283117639760beA3F867b69b3697a91dd',
 }
 export const SWAP_ROUTER_ADDRESSES: AddressMap = constructSameAddressMap('0xE592427A0AEce92De3Edee1F18E0157C05861564', [
+  SupportedChainId.POLYGON_MAINET,
   SupportedChainId.OPTIMISM,
   SupportedChainId.OPTIMISTIC_KOVAN,
   SupportedChainId.ARBITRUM_ONE,
@@ -595,4 +606,5 @@ export const SWAP_ROUTER_ADDRESSES: AddressMap = constructSameAddressMap('0xE592
 export const V3_MIGRATOR_ADDRESSES: AddressMap = constructSameAddressMap('0xA5644E29708357803b5A882D272c41cC0dF92B34', [
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.ARBITRUM_RINKEBY,
+  SupportedChainId.POLYGON_MAINET,
 ])
