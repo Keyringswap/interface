@@ -1,6 +1,5 @@
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { SupportedChainId } from 'constants/chains'
-import { isMobile } from 'utils/userAgent'
 
 import COINBASE_ICON_URL from '../assets/images/coinbaseWalletIcon.svg'
 import KEYRING from '../assets/images/keyring.svg'

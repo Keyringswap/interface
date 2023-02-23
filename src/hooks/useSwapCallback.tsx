@@ -185,6 +185,7 @@ function useSwapCallArguments(
     chainId,
     deadline,
     library,
+    name,
     recipient,
     routerContract,
     signatureData,

@@ -1,6 +1,5 @@
 import { Currency } from '@uniswap/sdk-core'
 import useDefaultChainId from 'hooks/useDefaultChainId'
-import { useActiveWeb3React } from 'hooks/web3'
 import { useMemo } from 'react'
 import { useCombinedActiveList } from 'state/lists/hooks'
 

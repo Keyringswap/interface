@@ -1,7 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { hexStripZeros } from '@ethersproject/bytes'
 import { Web3Provider } from '@ethersproject/providers'
-import { isAndroid } from '@walletconnect/browser-utils'
 import { CHAIN_INFO, SupportedChainId } from 'constants/chains'
 import { isMobile } from 'utils/userAgent'
 

@@ -8,7 +8,6 @@ import { useMemo } from 'react'
 import { BACOOR_SWAP, CHAIN_SWAP_MAP } from '../constants/addresses'
 import { SupportedChainId } from '../constants/chains'
 import { useMultipleContractSingleData } from '../state/multicall/hooks'
-import { useActiveWeb3React } from './web3'
 
 const PAIR_INTERFACE = new Interface(IUniswapV2PairABI)
 
@@ -54,6 +53,14 @@ export function useV2Pairs(
     [chainId, name, tokens]
   )
   const results = useMultipleContractSingleData(pairAddresses, PAIR_INTERFACE, 'getReserves')
+  if (name === 'VerseSwap')
+    console.log(
+      'pairAddresses',
+      name,
+      CHAIN_SWAP_MAP[chainId ?? SupportedChainId.POLYGON_MAINET][name].factoryAddresses[1],
+      CHAIN_SWAP_MAP[chainId ?? SupportedChainId.POLYGON_MAINET][name],
+      pairAddresses
+    )
 
   return useMemo(() => {
     return results.map((result, i) => {

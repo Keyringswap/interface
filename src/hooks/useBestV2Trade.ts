@@ -11,6 +11,7 @@ function useAllCommonPairs(name: string, currencyA?: Currency, currencyB?: Curre
   const allCurrencyCombinations = useAllCurrencyCombinations(currencyA, currencyB)
 
   const allPairs = useV2Pairs(name, allCurrencyCombinations)
+  if (name === 'VerseSwap') console.log('allPairs', name, allPairs)
   return useMemo(
     () =>
       Object.values(

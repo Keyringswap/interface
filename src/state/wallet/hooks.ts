@@ -5,7 +5,6 @@ import { Erc20Interface } from 'abis/types/Erc20'
 import { SupportedChainId } from 'constants/chains'
 import JSBI from 'jsbi'
 import { useMemo } from 'react'
-import { useAppSelector } from 'state/hooks'
 
 import { UNI } from '../../constants/tokens'
 import { useAllTokens } from '../../hooks/Tokens'

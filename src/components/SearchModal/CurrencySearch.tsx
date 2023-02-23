@@ -16,7 +16,6 @@ import { Text } from 'rebass'
 import styled from 'styled-components/macro'
 
 import { useAllTokens, useIsUserAddedToken, useSearchInactiveTokenLists, useToken } from '../../hooks/Tokens'
-import { useActiveWeb3React } from '../../hooks/web3'
 import { ButtonText, CloseIcon, IconWrapper, TYPE } from '../../theme'
 import { isAddress } from '../../utils'
 import Column from '../Column'

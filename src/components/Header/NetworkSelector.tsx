@@ -265,7 +265,7 @@ export default function NetworkSelector() {
           dispatch(addPopup({ content: { failedSwitchNetwork: targetChain }, key: `failed-network-switch` }))
         })
     },
-    [dispatch, library, toggle, history, chainId, account, connector]
+    [dispatch, library, toggle, history, chainId, connector]
   )
 
   function Row({ targetChain, onSelectChain }: { targetChain: number; onSelectChain: (targetChain: number) => void }) {

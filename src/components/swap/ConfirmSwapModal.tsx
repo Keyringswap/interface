@@ -81,7 +81,7 @@ export default function ConfirmSwapModal({
         selectedSwap={selectedSwap}
       />
     ) : null
-  }, [allowedSlippage, onAcceptChanges, recipient, showAcceptChanges, trade])
+  }, [allowedSlippage, onAcceptChanges, recipient, selectedSwap, showAcceptChanges, trade])
 
   const modalBottom = useCallback(() => {
     return trade ? (

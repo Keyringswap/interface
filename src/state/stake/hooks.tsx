@@ -6,7 +6,6 @@ import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
 import JSBI from 'jsbi'
 import { ReactNode, useMemo } from 'react'
-import { useAppSelector } from 'state/hooks'
 
 import { BACOOR_SWAP, CHAIN_SWAP_MAP } from '.../../constants/addresses'
 import { DAI, UNI, USDC, USDT, WBTC, WETH9_EXTENDED } from '../../constants/tokens'

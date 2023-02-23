@@ -76,7 +76,7 @@ export const UNI_SWAP = 'UniSwap'
 export const SUSHI_SWAP = 'SushiSwap'
 export const KYBER_SWAP = 'KyberSwap'
 export const SHIBA_SWAP = 'ShibaSwap'
-
+export const VERSE_SWAP = 'VerseSwap'
 export const QUICK_SWAP = 'QuickSwap'
 export const POLYCAT = 'PolyCat'
 export const POLYDEX = 'PolyDex'
@@ -113,6 +113,10 @@ export const V2_SUSHI_FACTORY_ADDRESSES: AddressMap = constructSameAddressMap(V2
 // Polygon Mainnet
 
 export const UNKNOWN_LOGO = 'https://raw.githubusercontent.com/sushiswap/icons/master/token/unknown.png'
+
+export const VERSE_ROUTER_ETH: AddressMap = constructSameAddressMap('0xB4B0ea46Fe0E9e8EAB4aFb765b527739F2718671')
+export const VERSE_FACTORY_ETH: AddressMap = constructSameAddressMap('0xee3E9E46E34a27dC755a63e2849C9913Ee1A06E2')
+export const VERSE_INIT_CODE_HASH_ETH = '0xea262aa87f6ccb1a5351d1f7d934b75bb08b6f766003e9969783ee5fe0ba7e6b'
 
 export const SUSHI_ROUTER_ADDRESS_MAINNET: AddressMap = constructSameAddressMap(
   '0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506'
@@ -315,10 +319,10 @@ export const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000'
 export const HASH_ZERO = '0x0000000000000000000000000000000000000000000000000000000000000000'
 
 export const CHAIN_SWAP_NAMES: ChainSwapName = {
-  [SupportedChainId.MAINNET]: [SUSHI_SWAP, UNI_SWAP, SHIBA_SWAP, KYBER_SWAP],
+  [SupportedChainId.MAINNET]: [UNI_SWAP, SUSHI_SWAP, SHIBA_SWAP, VERSE_SWAP],
   [SupportedChainId.POLYGON_MAINET]: [SUSHI_SWAP, QUICK_SWAP, APE_SWAP, POLYCAT, POLYDEX],
   [SupportedChainId.BSC_MAINNET]: [SUSHI_SWAP, PANCAKE_SWAP, BI_SWAP, APE_SWAP, BABY_SWAP],
-  [SupportedChainId.POLYGON_TESTNET]: [SUSHI_SWAP, BACOOR_SWAP, UNI_SWAP],
+  [SupportedChainId.POLYGON_TESTNET]: [BACOOR_SWAP, SUSHI_SWAP, UNI_SWAP],
   [SupportedChainId.AVALANCHE]: [SUSHI_SWAP, TRADER_JOE, PANGOLIN],
   [SupportedChainId.AVALANCHE_TESTNET]: [SUSHI_SWAP, TRADER_JOE],
   [SupportedChainId.ARBITRUM_ONE]: [SUSHI_SWAP, UNI_SWAP, SWAPR],
@@ -341,6 +345,7 @@ export const LOGO: { [key: string]: string } = {
   [TRADER_JOE]: traderjoeLogoUrl,
   [PANGOLIN]: pangolinLogoUrl,
   [SWAPR]: swapRLogoUrl,
+  [VERSE_SWAP]: swapRLogoUrl,
 }
 
 export const CHAIN_SWAP_MAP: ChainSwapMap = {
@@ -357,16 +362,16 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       routerAddress: SUSHI_ROUTER_ADDRESS_ETH,
       computePairAddress,
     },
-    [KYBER_SWAP]: {
-      factoryAddresses: KYBER_FACTORY_ADDRESS_ETH,
-      initCodeHash: KYBER_INIT_CODE_HASH_ETH,
-      routerAddress: KYBER_ROUTER_ADDRESS_ETH,
-      computePairAddress,
-    },
     [SHIBA_SWAP]: {
       factoryAddresses: SHIBA_FACTORY_ADDRESS_ETH,
       initCodeHash: SHIBA_INIT_CODE_HASH_ETH,
       routerAddress: SHIBA_ROUTER_ADDRESS_ETH,
+      computePairAddress,
+    },
+    [VERSE_SWAP]: {
+      factoryAddresses: VERSE_FACTORY_ETH,
+      initCodeHash: VERSE_INIT_CODE_HASH_ETH,
+      routerAddress: VERSE_ROUTER_ETH,
       computePairAddress,
     },
   },

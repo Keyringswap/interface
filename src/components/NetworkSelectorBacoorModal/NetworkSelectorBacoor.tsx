@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro'
 import { AbstractConnector } from '@web3-react/abstract-connector'
-import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
+import { UnsupportedChainIdError } from '@web3-react/core'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import doneIcon from 'assets/images/circle_done.svg'
 import { AutoColumn } from 'components/Column'
@@ -17,7 +17,6 @@ import { useAppDispatch, useAppSelector } from 'state/hooks'
 import styled, { css } from 'styled-components/macro'
 import { CloseIcon, TYPE } from 'theme'
 import { supportedChainId } from 'utils/supportedChainId'
-import { switchToNetwork } from 'utils/switchToNetwork'
 
 const Wrapper = styled.div`
   position: relative;
@@ -126,7 +125,7 @@ interface ImportProps {
 }
 // ============================================================================================================
 function NetworkElement({ targetChain, confirmed }: { targetChain: number; confirmed: boolean }) {
-  const { chainId: chainIdWeb3, library, account, activate } = useActiveWeb3React()
+  const { library } = useActiveWeb3React()
   const chainId = useAppSelector((state) => state.application.chainId)
   const active = chainId === targetChain
   const isOptimism = targetChain === SupportedChainId.OPTIMISM
@@ -134,6 +133,7 @@ function NetworkElement({ targetChain, confirmed }: { targetChain: number; confi
 
   const dispatch = useAppDispatch()
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleElementClick = () => {
     if (confirmed) {
       dispatch(updateChainId({ chainId: targetChain ? supportedChainId(targetChain) ?? null : null }))
@@ -154,7 +154,7 @@ function NetworkElement({ targetChain, confirmed }: { targetChain: number; confi
         <SubText>{networkName}</SubText>
       </NetworkItem>
     ),
-    [targetChain, confirmed, networkName, chainId]
+    [handleElementClick, active, targetChain, confirmed, networkName]
   )
 
   if (!library || !chainId) {
@@ -165,7 +165,7 @@ function NetworkElement({ targetChain, confirmed }: { targetChain: number; confi
 }
 // ============================================================================================================
 function WalletElement({ wallet, confirmed }: { wallet: string; confirmed: boolean }) {
-  const { chainId: chainIdWeb3, library, account, activate } = useActiveWeb3React()
+  const { library, activate } = useActiveWeb3React()
   const chainId = useAppSelector((state) => state.application.chainId)
   const logMonitoringEvent = useWalletConnectMonitoringEventCallback()
 
@@ -202,6 +202,7 @@ function WalletElement({ wallet, confirmed }: { wallet: string; confirmed: boole
         })
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleElementClick = () => {
     if (confirmed) {
       tryActivation(SUPPORTED_WALLETS[wallet].connector)
@@ -217,7 +218,7 @@ function WalletElement({ wallet, confirmed }: { wallet: string; confirmed: boole
         <SubText>{SUPPORTED_WALLETS[wallet].name}</SubText>
       </WalletItem>
     ),
-    [wallet, confirmed]
+    [handleElementClick, wallet, confirmed]
   )
 
   if (!library || !chainId) {

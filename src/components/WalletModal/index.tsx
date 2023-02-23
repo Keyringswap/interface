@@ -5,18 +5,17 @@ import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { AutoColumn } from 'components/Column'
 import { PrivacyPolicy } from 'components/PrivacyPolicy'
-import Row, { AutoRow, RowBetween } from 'components/Row'
-import { CHAIN_INFO } from 'constants/chains'
+import Row, { AutoRow } from 'components/Row'
 import { useWalletConnectMonitoringEventCallback } from 'hooks/useMonitoringEventCallback'
 import { useEffect, useState } from 'react'
-import { ArrowLeft, ArrowRight, Info } from 'react-feather'
+import { ArrowLeft } from 'react-feather'
 import ReactGA from 'react-ga'
 import styled from 'styled-components/macro'
 import { setInterval, setTimeout } from 'timers'
 
 import MetamaskIcon from '../../assets/images/metamask.png'
 import { ReactComponent as Close } from '../../assets/images/x.svg'
-import { fortmatic, injected, portis, walletlink } from '../../connectors'
+import { fortmatic, injected, portis } from '../../connectors'
 import { OVERLAY_READY } from '../../connectors/Fortmatic'
 import { SUPPORTED_WALLETS } from '../../constants/wallet'
 import usePrevious from '../../hooks/usePrevious'
@@ -25,7 +24,7 @@ import { ApplicationModal } from '../../state/application/reducer'
 import { ExternalLink, TYPE } from '../../theme'
 import { isMobile } from '../../utils/userAgent'
 import AccountDetails from '../AccountDetails'
-import Card, { LightCard } from '../Card'
+import { LightCard } from '../Card'
 import Modal from '../Modal'
 import Option from './Option'
 import PendingView from './PendingView'
@@ -112,16 +111,6 @@ const HoverText = styled.div`
   }
 `
 
-const LinkCard = styled(Card)`
-  background-color: ${({ theme }) => theme.primary1};
-  color: ${({ theme }) => theme.white};
-
-  :hover {
-    cursor: pointer;
-    filter: brightness(0.9);
-  }
-`
-
 const WALLET_VIEWS = {
   OPTIONS: 'options',
   OPTIONS_SECONDARY: 'options_secondary',
@@ -140,7 +129,7 @@ export default function WalletModal({
   ENSName?: string
 }) {
   // important that these are destructed from the account-specific web3-react context
-  const { active, chainId, account, connector, activate, error } = useWeb3React()
+  const { active, account, connector, activate, error } = useWeb3React()
 
   const [walletView, setWalletView] = useState(WALLET_VIEWS.ACCOUNT)
   const previousWalletView = usePrevious(walletView)
@@ -158,7 +147,6 @@ export default function WalletModal({
 
   const logMonitoringEvent = useWalletConnectMonitoringEventCallback()
 
-  const chainInfo = chainId ? CHAIN_INFO[chainId] : undefined
   // close on connection, when logged out before
   useEffect(() => {
     if (account && !previousAccount && walletModalOpen) {

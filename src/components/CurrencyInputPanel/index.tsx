@@ -190,8 +190,6 @@ export default function CurrencyInputPanel({
   showCurrencyAmount,
   disableNonToken,
   renderBalance,
-  fiatValue,
-  priceImpact,
   hideBalance = false,
   pair = null, // used for double token logo
   hideInput = false,

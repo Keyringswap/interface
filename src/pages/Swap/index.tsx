@@ -6,7 +6,6 @@ import { Trade as V3Trade } from '@uniswap/v3-sdk'
 import BannerImg1 from 'assets/images/Banner1.jpeg'
 import BannerImg2 from 'assets/images/Banner2.jpeg'
 import { LoadingOpacityContainer } from 'components/Loader/styled'
-import { NetworkAlert } from 'components/NetworkAlert/NetworkAlert'
 import { AdvancedSwapDetails } from 'components/swap/AdvancedSwapDetails'
 import { AutoRouterLogo } from 'components/swap/RouterLabel'
 import SwapRoute from 'components/swap/SwapRoute'
@@ -54,10 +53,9 @@ import {
   Wrapper,
 } from '../../components/swap/styleds'
 import SwapHeader from '../../components/swap/SwapHeader'
-import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
 import TokenWarningModal from '../../components/TokenWarningModal'
-import { CHAIN_SWAP_NAMES, LOGO, SUSHI_SWAP, UNKNOWN_LOGO } from '../../constants/addresses'
-import { CHAIN_INFO, SupportedChainId } from '../../constants/chains'
+import { CHAIN_SWAP_NAMES } from '../../constants/addresses'
+import {  SupportedChainId } from '../../constants/chains'
 import { TRADE_MAP_UPDATE } from '../../constants/misc'
 import { useAllTokens, useCurrency } from '../../hooks/Tokens'
 import { ApprovalState, useApproveCallbackFromTrade } from '../../hooks/useApproveCallback'
@@ -65,6 +63,9 @@ import useENSAddress from '../../hooks/useENSAddress'
 import { useERC20PermitFromTrade, UseERC20PermitState } from '../../hooks/useERC20Permit'
 import useIsArgentWallet from '../../hooks/useIsArgentWallet'
 import { useIsSwapUnsupported } from '../../hooks/useIsSwapUnsupported'
+import { useParsedAmounts } from '../../hooks/useParsedAmounts'
+import { useRouting } from '../../hooks/useRouting'
+import { useSortedTrades } from '../../hooks/useSortedTrades'
 import { useSwapCallback } from '../../hooks/useSwapCallback'
 import useToggledVersion from '../../hooks/useToggledVersion'
 import { useUSDCValue } from '../../hooks/useUSDCPrice'
@@ -148,43 +149,7 @@ const Banner = styled.div`
   align-items: center;
   // animation: ${fadeIn} 5s ease-out;
 `
-const Banner2 = styled.div`
-  max-width: 480px;
-  width: 100%;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // animation: ${fadeIn} 5s ease-out;
-`
-const Chains = styled.div`
-  display: flex;
-  margin: 70px auto;
-`
-const ChainItem = styled.a`
-  background-color: ${({ theme }) => theme.bg0};
-  border: 1px solid ${({ theme }) => theme.bg0};
-  color: ${({ theme }) => theme.text1};
-  display: flex;
-  font-weight: 500;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 10px;
-  cursor: pointer;
-  border-radius: 11px;
-  margin: 0 5px;
-  text-decoration: none;
-  transistion: 0.3s all;
-  &:hover {
-    border-color: ${({ theme }) => theme.bg2};
-  }
-`
-const ChainLogo = styled.img`
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-`
-const ChainLabel = styled.span``
+
 const ActiveOutlinedButton = ({
   name,
   selectedSwap,
@@ -209,63 +174,6 @@ type TradeMap = {
     swapInputError: ReactNode
     name: string
   }
-}
-
-const useParsedAmounts = (
-  independentField: Field,
-  parsedAmount: CurrencyAmount<Currency> | undefined,
-  showWrap: boolean,
-  trade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType> | undefined
-) => {
-  return useMemo(
-    () =>
-      showWrap
-        ? {
-            [Field.INPUT]: parsedAmount,
-            [Field.OUTPUT]: parsedAmount,
-          }
-        : {
-            [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
-            [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
-          },
-    [independentField, parsedAmount, showWrap, trade]
-  )
-}
-
-const useSortedTrades = (showWrap: boolean, tradeMap: TradeMap) => {
-  return useMemo(
-    () =>
-      Object.values(tradeMap)
-        .sort((a, b) => {
-          if (showWrap) {
-            return 0
-          } else {
-            const amountA = Number(a?.trade?.outputAmount?.toSignificant(6) ?? '')
-            const amountB = Number(b?.trade?.outputAmount?.toSignificant(6) ?? '')
-            return amountB - amountA
-          }
-        })
-        .map((item) => ({
-          name: item.name,
-          logo: LOGO[item.name] ?? UNKNOWN_LOGO,
-          amountOut: showWrap ? item.parsedAmount?.toExact() ?? '' : item?.trade?.outputAmount?.toSignificant(6) ?? '',
-        })),
-    [showWrap, tradeMap]
-  )
-}
-
-const useRouting = (
-  trade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType> | undefined,
-  v3TradeState: V3TradeState
-) => {
-  return useMemo(
-    () => [
-      trade instanceof V3Trade ? !trade?.swaps : !trade?.route,
-      V3TradeState.LOADING === v3TradeState,
-      V3TradeState.SYNCING === v3TradeState,
-    ],
-    [trade, v3TradeState]
-  )
 }
 
 export default function Swap({ history }: RouteComponentProps) {
@@ -440,13 +348,6 @@ export default function Swap({ history }: RouteComponentProps) {
     swapErrorMessage: undefined,
     txHash: undefined,
   })
-
-  // const formattedAmounts = {
-  //   [independentField]: typedValue,
-  //   [dependentField]: showWrap
-  //     ? parsedAmounts[independentField]?.toExact() ?? ''
-  //     : parsedAmounts[dependentField]?.toSignificant(6) ?? '',
-  // }
 
   const formattedAmounts = useMemo(
     () => ({

@@ -3063,10 +3063,10 @@
     "@json-rpc-tools/types" "^1.7.6"
     "@pedrouid/environment" "^1.0.1"
 
-"@keyringswap/v2-sdk@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@keyringswap/v2-sdk/-/v2-sdk-1.0.4.tgz#01bd116809b832a8082fb25ea356b535ab9fe18f"
-  integrity sha512-nvSNdjkeUbMDfg1JeiVR1IQHYjjvOzlv45ea+gepAuNyFCQh4KkaeGCNgrybQik042C4aAvJfIBqRjKri4PN9g==
+"@keyringswap/v2-sdk@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@keyringswap/v2-sdk/-/v2-sdk-1.0.5.tgz#30147896cf9a164b5f624a08c738522866d3b60f"
+  integrity sha512-gSqi07paZNPcsmR/5oNwzIvbpEuKpJ8YYiNJ6Pl2xUkvUCSpTU5W7CwKTahiyg21lKjmDub/ZXeR/jjdden3nQ==
   dependencies:
     "@ethersproject/address" "^5.0.0"
     "@ethersproject/solidity" "^5.0.0"

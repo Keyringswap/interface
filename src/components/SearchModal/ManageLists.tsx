@@ -321,6 +321,7 @@ export function ManageLists({
     async function fetchTempList() {
       fetchList(listUrlInput, false)
         .then((list) => setTempList(list))
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .catch((error) => {
           setAddError(t`Error importing list`)
         })

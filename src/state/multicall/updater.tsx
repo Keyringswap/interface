@@ -5,7 +5,6 @@ import { UniswapInterfaceMulticall } from 'types/v3'
 
 import { useMulticall2Contract } from '../../hooks/useContract'
 import useDebounce from '../../hooks/useDebounce'
-import { useActiveWeb3React } from '../../hooks/web3'
 import chunkArray from '../../utils/chunkArray'
 import { retry, RetryableError } from '../../utils/retry'
 import { useBlockNumber } from '../application/hooks'
