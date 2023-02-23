@@ -11,7 +11,6 @@ function useAllCommonPairs(name: string, currencyA?: Currency, currencyB?: Curre
   const allCurrencyCombinations = useAllCurrencyCombinations(currencyA, currencyB)
 
   const allPairs = useV2Pairs(name, allCurrencyCombinations)
-  if (name === 'VerseSwap') console.log('allPairs', name, allPairs)
   return useMemo(
     () =>
       Object.values(
@@ -48,7 +47,6 @@ export function useBestV2Trade(
   )
 
   const allowedPairs: Pair[] = useAllCommonPairs(name, currencyIn, currencyOut)
-  // console.log('allowedPairs', allowedPairs)
   return useMemo(() => {
     if (amountSpecified && currencyIn && currencyOut && allowedPairs.length > 0) {
       if (maxHops === 1) {

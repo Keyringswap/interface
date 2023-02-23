@@ -53,14 +53,6 @@ export function useV2Pairs(
     [chainId, name, tokens]
   )
   const results = useMultipleContractSingleData(pairAddresses, PAIR_INTERFACE, 'getReserves')
-  if (name === 'VerseSwap')
-    console.log(
-      'pairAddresses',
-      name,
-      CHAIN_SWAP_MAP[chainId ?? SupportedChainId.POLYGON_MAINET][name].factoryAddresses[1],
-      CHAIN_SWAP_MAP[chainId ?? SupportedChainId.POLYGON_MAINET][name],
-      pairAddresses
-    )
 
   return useMemo(() => {
     return results.map((result, i) => {
