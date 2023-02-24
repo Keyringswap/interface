@@ -1,5 +1,5 @@
 import { Interface } from '@ethersproject/abi'
-import { Pair } from '@keyringswap/v2-sdk'
+import { computePairAddress, Pair } from '@keyringswap/v2-sdk'
 import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import useDefaultChainId from 'hooks/useDefaultChainId'
@@ -37,11 +37,10 @@ export function useV2Pairs(
           tokenB &&
           tokenA.chainId === tokenB.chainId &&
           !tokenA.equals(tokenB) &&
-          name &&
           CHAIN_SWAP_MAP[chainId ?? SupportedChainId.POLYGON_MAINET] &&
           CHAIN_SWAP_MAP[chainId ?? SupportedChainId.POLYGON_MAINET][name] &&
           CHAIN_SWAP_MAP[chainId ?? SupportedChainId.POLYGON_MAINET][name].factoryAddresses[tokenA.chainId]
-          ? CHAIN_SWAP_MAP[chainId ?? SupportedChainId.POLYGON_MAINET][name].computePairAddress({
+          ? computePairAddress({
               factoryAddress:
                 CHAIN_SWAP_MAP[chainId ?? SupportedChainId.POLYGON_MAINET][name].factoryAddresses[tokenA.chainId],
               initCodeHash: CHAIN_SWAP_MAP[chainId ?? SupportedChainId.POLYGON_MAINET][name].initCodeHash,

@@ -2,18 +2,13 @@ import {
   FACTORY_ADDRESS as V2_UNI_FACTORY_ADDRESS,
   INIT_CODE_HASH as UNI_INIT_CODE_HASH,
 } from '@duythao_bacoor/thaoswap-sdk'
-import {
-  computePairAddress,
-  FACTORY_ADDRESS as V2_FACTORY_ADDRESS,
-  INIT_CODE_HASH as BACOOR_INIT_CONDE_HASH,
-} from '@keyringswap/v2-sdk'
+import { FACTORY_ADDRESS as V2_FACTORY_ADDRESS, INIT_CODE_HASH as BACOOR_INIT_CONDE_HASH } from '@keyringswap/v2-sdk'
 import {
   ChainId,
   FACTORY_ADDRESS as SUSHI_FACTORY_ADDRESS,
   INIT_CODE_HASH as SUSHI_INIT_CODE_HASH,
   ROUTER_ADDRESS,
 } from '@sushiswap/sdk'
-import { Token } from '@uniswap/sdk-core'
 import { FACTORY_ADDRESS as V3_FACTORY_ADDRESS } from '@uniswap/v3-sdk'
 import apeswapLogoUrl from 'assets/images/ape.png'
 import babyswapLogoUrl from 'assets/images/babyswap.png'
@@ -40,17 +35,6 @@ export interface SwapInfo {
   readonly factoryAddresses: AddressMap
   readonly initCodeHash: string
   readonly routerAddress: AddressMap
-  computePairAddress: ({
-    factoryAddress,
-    initCodeHash,
-    tokenA,
-    tokenB,
-  }: {
-    factoryAddress: string
-    initCodeHash: string
-    tokenA: Token
-    tokenB: Token
-  }) => string
 }
 
 export type ChainSwapName = { [chainId: number]: string[] }
@@ -356,25 +340,21 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       factoryAddresses: UNI_FACTORY_ADDRESSES_ETH,
       initCodeHash: UNI_INIT_CODE_HASH_ETH,
       routerAddress: UNI_ROUTER_ADDRESS_ETH,
-      computePairAddress,
     },
     [SUSHI_SWAP]: {
       factoryAddresses: SUSHI_FACTORY_ADDRESSES_ETH,
       initCodeHash: SUSHI_INIT_CODE_HASH_ETH,
       routerAddress: SUSHI_ROUTER_ADDRESS_ETH,
-      computePairAddress,
     },
     [SHIBA_SWAP]: {
       factoryAddresses: SHIBA_FACTORY_ADDRESS_ETH,
       initCodeHash: SHIBA_INIT_CODE_HASH_ETH,
       routerAddress: SHIBA_ROUTER_ADDRESS_ETH,
-      computePairAddress,
     },
     [VERSE_SWAP]: {
       factoryAddresses: VERSE_FACTORY_ETH,
       initCodeHash: VERSE_INIT_CODE_HASH_ETH,
       routerAddress: VERSE_ROUTER_ETH,
-      computePairAddress,
     },
   },
   [SupportedChainId.POLYGON_TESTNET]: {
@@ -382,19 +362,16 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       factoryAddresses: V2_FACTORY_ADDRESSES,
       initCodeHash: BACOOR_INIT_CONDE_HASH,
       routerAddress: V2_ROUTER_ADDRESS,
-      computePairAddress,
     },
     [UNI_SWAP]: {
       factoryAddresses: V2_UNI_FACTORY_ADDRESSES,
       initCodeHash: UNI_INIT_CODE_HASH,
       routerAddress: V2_UNI_ROUTER_ADDRESS,
-      computePairAddress,
     },
     [SUSHI_SWAP]: {
       factoryAddresses: V2_SUSHI_FACTORY_ADDRESSES,
       initCodeHash: SUSHI_INIT_CODE_HASH[ChainId.MATIC_TESTNET],
       routerAddress: V2_SUSHI_ROUTER_ADDRESS,
-      computePairAddress,
     },
   },
   [SupportedChainId.POLYGON_MAINET]: {
@@ -402,37 +379,31 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       factoryAddresses: UNI_FACTORY_ADDRESSES_ETH,
       initCodeHash: UNI_INIT_CODE_HASH_ETH,
       routerAddress: UNI_ROUTER_ADDRESS_ETH,
-      computePairAddress,
     },
     [SUSHI_SWAP]: {
       factoryAddresses: SUSHI_FACTORY_ADDRESSES_MAINNET,
       initCodeHash: SUSHI_INIT_CODE_HASH_MAINNET,
       routerAddress: SUSHI_ROUTER_ADDRESS_MAINNET,
-      computePairAddress,
     },
     [QUICK_SWAP]: {
       factoryAddresses: QUICK_FACTORY_ADDRESSES_MAINNET,
       initCodeHash: QUICK_INIT_CODE_HASH,
       routerAddress: QUICK_ROUTER_ADDRESS_MAINNET,
-      computePairAddress,
     },
     [APE_SWAP]: {
       factoryAddresses: APESWAP_FACTORY_ADDRESSES_POLYGON,
       initCodeHash: APESWAP_INIT_CODE_HASH_POLYGON,
       routerAddress: APESWAP_ROUTER_ADDRESS_POLYGON,
-      computePairAddress,
     },
     [POLYCAT]: {
       factoryAddresses: POLYCAT_FACTORY_ADDRESSES_MAINNET,
       initCodeHash: POLYCAT_INIT_CODE_HASH,
       routerAddress: POLYCAT_ROUTER_ADDRESS_MAINNET,
-      computePairAddress,
     },
     [POLYDEX]: {
       factoryAddresses: POLYDEX_FACTORY_ADDRESSES_POLYGON,
       initCodeHash: POLYDEX_INIT_CODE_HASH,
       routerAddress: POLYDEX_ROUTER_ADDRESS_POLYGON,
-      computePairAddress,
     },
   },
   [SupportedChainId.BSC_MAINNET]: {
@@ -440,31 +411,26 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       factoryAddresses: PANCAKE_FACTORY_ADDRESS_BSC,
       initCodeHash: PANCAKE_INIT_CODE_HASH_BSC,
       routerAddress: PANCAKE_ROUTER_ADDRESS_BSC,
-      computePairAddress,
     },
     [BI_SWAP]: {
       factoryAddresses: BISWAP_FACTORY_ADDRESS_BSC,
       initCodeHash: BISWAP_INIT_CODE_HASH_BSC,
       routerAddress: BISWAP_ROUTER_ADDRESS_BSC,
-      computePairAddress,
     },
     [APE_SWAP]: {
       factoryAddresses: APESWAP_FACTORY_ADDRESS_BSC,
       initCodeHash: APESWAP_INIT_CODE_HASH_BSC,
       routerAddress: APESWAP_ROUTER_ADDRESS_BSC,
-      computePairAddress,
     },
     [SUSHI_SWAP]: {
       factoryAddresses: SUSHISWAP_FACTORY_ADDRESS_BSC,
       initCodeHash: SUSHISWAP_INIT_CODE_HASH_BSC,
       routerAddress: SUSHISWAP_ROUTER_ADDRESS_BSC,
-      computePairAddress,
     },
     [BABY_SWAP]: {
       factoryAddresses: BABYSWAP_FACTORY_ADDRESS_BSC,
       initCodeHash: BABYSWAP_INIT_CODE_HASH_BSC,
       routerAddress: BABYSWAP_ROUTER_ADDRESS_BSC,
-      computePairAddress,
     },
   },
   [SupportedChainId.AVALANCHE]: {
@@ -472,19 +438,16 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       factoryAddresses: SUSHI_FACTORY_ADDRESS_AVAX,
       initCodeHash: SUSHI_INIT_CODE_HASH_AVAX,
       routerAddress: SUSHI_ROUTER_ADDRESS_AVAX,
-      computePairAddress,
     },
     [TRADER_JOE]: {
       factoryAddresses: TRADERJOE_FACTORY_ADDRESS_AVAX,
       initCodeHash: TRADERJOE_INIT_CODE_HASH_AVAX,
       routerAddress: TRADERJOE_ROUTER_ADDRESS_AVAX,
-      computePairAddress,
     },
     [PANGOLIN]: {
       factoryAddresses: PANGOLIN_FACTORY_ADDRESS_AVAX,
       initCodeHash: PANGOLIN_INIT_CODE_HASH_AVAX,
       routerAddress: PANGOLIN_ROUTER_ADDRESS_AVAX,
-      computePairAddress,
     },
   },
   [SupportedChainId.AVALANCHE_TESTNET]: {
@@ -492,13 +455,11 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       factoryAddresses: V2_SUSHI_FACTORY_ADDRESSES,
       initCodeHash: SUSHI_INIT_CODE_HASH[ChainId.MATIC_TESTNET],
       routerAddress: V2_SUSHI_ROUTER_ADDRESS,
-      computePairAddress,
     },
     [TRADER_JOE]: {
       factoryAddresses: TRADERJOE_FACTORY_ADDRESS_FUJI,
       initCodeHash: TRADERJOE_INIT_CODE_HASH_FUJI,
       routerAddress: TRADERJOE_ROUTER_ADDRESS_FUJI,
-      computePairAddress,
     },
   },
   [SupportedChainId.ARBITRUM_ONE]: {
@@ -506,19 +467,16 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       factoryAddresses: SUSHI_FACTORY_ADDRESS_ARBITRUM,
       initCodeHash: SUSHI_INIT_CODE_HASH_ARBITRUM,
       routerAddress: SUSHI_ROUTER_ADDRESS_ARBITRUM,
-      computePairAddress,
     },
     [UNI_SWAP]: {
       factoryAddresses: UNI_FACTORY_ADDRESSES_ETH,
       initCodeHash: UNI_INIT_CODE_HASH_ETH,
       routerAddress: UNI_ROUTER_ADDRESS_ETH,
-      computePairAddress,
     },
     [SWAPR]: {
       factoryAddresses: SWAPR_FACTORY_ADDRESS_ARBITRUM,
       initCodeHash: SWAPR_INIT_CODE_HASH_ARBITRUM,
       routerAddress: SWAPR_ROUTER_ADDRESS_ARBITRUM,
-      computePairAddress,
     },
   },
   [SupportedChainId.OPTIMISM]: {
@@ -526,13 +484,11 @@ export const CHAIN_SWAP_MAP: ChainSwapMap = {
       factoryAddresses: SUSHI_FACTORY_ADDRESS_ARBITRUM,
       initCodeHash: SUSHI_INIT_CODE_HASH_ARBITRUM,
       routerAddress: SUSHI_ROUTER_ADDRESS_ARBITRUM,
-      computePairAddress,
     },
     [UNI_SWAP]: {
       factoryAddresses: UNI_FACTORY_ADDRESSES_ETH,
       initCodeHash: UNI_INIT_CODE_HASH_ETH,
       routerAddress: UNI_ROUTER_ADDRESS_ETH,
-      computePairAddress,
     },
   },
 }
