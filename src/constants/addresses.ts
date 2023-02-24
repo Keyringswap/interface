@@ -311,7 +311,7 @@ export const CHAIN_SWAP_NAMES: ChainSwapName = {
   [SupportedChainId.POLYGON_TESTNET]: [BACOOR_SWAP, SUSHI_SWAP, UNI_SWAP],
   [SupportedChainId.AVALANCHE]: [SUSHI_SWAP, TRADER_JOE, PANGOLIN],
   [SupportedChainId.AVALANCHE_TESTNET]: [SUSHI_SWAP, TRADER_JOE],
-  [SupportedChainId.ARBITRUM_ONE]: [SUSHI_SWAP, UNI_SWAP, SWAPR],
+  [SupportedChainId.ARBITRUM_ONE]: [UNI_SWAP, SUSHI_SWAP, SWAPR],
   [SupportedChainId.ARBITRUM_RINKEBY]: [SUSHI_SWAP],
   [SupportedChainId.OPTIMISM]: [UNI_SWAP],
 }
